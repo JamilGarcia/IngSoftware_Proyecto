@@ -1,8 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+import LoginScreen from './componentes/Login/Login_Ventana';
 
 function App() {
   return (
+    <LoginScreen />
+    /*
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -18,7 +21,7 @@ function App() {
           Learn React
         </a>
       </header>
-    </div>
+    </div>*/
   );
 }
 
