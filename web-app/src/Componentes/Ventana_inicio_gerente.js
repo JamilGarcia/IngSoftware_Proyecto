@@ -7,10 +7,6 @@ import { FaCashRegister } from "react-icons/fa";
 import { FaUserEdit } from "react-icons/fa";
 import { FaArchive } from "react-icons/fa";
 
-
-
-
-
 function App() {
     return (
       <body>
