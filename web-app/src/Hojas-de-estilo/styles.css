@@ -277,3 +277,36 @@
   align-content: stretch;
   background-color: #ED8BBE;
 }
+
+#Elemento1eje {
+
+  border-style: solid;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 26px;
+  margin-top: 15rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+  background-color: #ED8BBE;
+}
+
+#Elemento2eje {
+  border-style: solid;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 26px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+  background-color: #ED8BBE;
+  margin-bottom: 13rem;
+  
+
+}

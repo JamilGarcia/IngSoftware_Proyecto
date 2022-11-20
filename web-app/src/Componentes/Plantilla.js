@@ -1,11 +1,11 @@
 import './Hojas-de-estilo/bootstrap.min.css'
 import './Hojas-de-estilo/Navbar-With-Button-icons.css'
 import './Hojas-de-estilo/styles.css'
-import { Link } from 'react-router-dom'
 
 
-import React, { useState } from "react";
-import {MdOutlineEventSeat } from "react-icons/md";
+
+
+
 
 
  function Plantilla() {
@@ -66,4 +66,4 @@ import {MdOutlineEventSeat } from "react-icons/md";
   )
 }
 
-export default Butacas
+export default Plantilla
