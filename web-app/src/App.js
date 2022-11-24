@@ -13,6 +13,7 @@ import { FaArchive } from "react-icons/fa";
 
 function App() {
     return (
+
       <body>
       <div class="estiloHeading">
           <h3 class="display-5">Programa</h3>
@@ -69,7 +70,7 @@ function App() {
           </div>
       </div>
   </body>
-    );
+    )
   }
 
 export default App

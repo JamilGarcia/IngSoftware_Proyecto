@@ -1,0 +1,68 @@
+
+.fondo-pantalla {
+    min-height: 100vh;
+    background-image: linear-gradient( #ec428c 0%, #ec428c 40%,
+     #f9c6dd 40%, #f9c6dd 100% );
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+.caja-Login {
+    background-color: white;
+    min-height: 120%;
+    min-width: 50%;
+    border-radius: 25px;
+}
+
+.input-items{
+margin-bottom: 1em;
+}
+.boton_Ingresar{
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+h2{
+    font-family: 'CrimsonText';
+    color:#ec428c;
+    padding-bottom: 0.51em;
+}
+img{
+    padding-top: 20px;
+    margin-bottom: 5%;
+}
+.btn {
+    background-color: #ec428c;
+    color: white;
+    width: 40%;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+.form-control{
+    margin: 0.5em;
+}
+
+.form-group{
+    display:flex;
+    align-items: center;
+    width: 55%;
+}
+
+.contenedor_datos{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.Icon{
+    float:left;
+}
+
+.indicador_error {
+    color:red;
+    font-size: small;
+}
