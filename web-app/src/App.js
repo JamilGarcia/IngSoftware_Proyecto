@@ -2,16 +2,14 @@ import './Hojas-de-estilo/bootstrap.min.css'
 import './Hojas-de-estilo/Navbar-With-Button-icons.css'
 import './Hojas-de-estilo/styles.css'
 import './App.css';
-import { FaFileInvoiceDollar } from "react-icons/fa";
-import { FaCashRegister } from "react-icons/fa";
-import { FaUserEdit } from "react-icons/fa";
-import { FaArchive } from "react-icons/fa";
+import { BsFillCartCheckFill } from "react-icons/bs";
+import { BsFillChatLeftQuoteFill } from "react-icons/bs";
 
 
 
 
 
-function App() {
+function Ventana_jefeejecutivo() {
     return (
       <body>
       <div class="estiloHeading">
@@ -34,23 +32,17 @@ function App() {
                   <p class="TxtMenuTitulo"><strong>MENU</strong></p>
               </div>
               <div id="MenuElementos" class="claseMenuElementos">
-                  <div id="Elemento1">
-                      <p class="Icono_Menu"><FaFileInvoiceDollar/></p> 
-                      <p class="TxtElements">Generar <br></br>factura</p>
+                  <div id="Elemento1eje">
+                      <p class="Icono_Menu"><BsFillCartCheckFill/></p> 
+                      <p class="TxtElements">Facturar</p>
   
                   </div>
-                  <div id="Elemento3">
-                  <p class="Icono_Menu"><FaCashRegister/></p> 
-                      <p class="TxtElements">Flujo de <br></br>Efectivo</p>
+                  
+                  <div id="Elemento2eje">
+                      <p class="Icono_Menu"><BsFillChatLeftQuoteFill/></p> 
+                      <p class="TxtElements">Cotizar</p>
                   </div>
-                  <div id="Elemento2">
-                      <p class="Icono_Menu"><FaUserEdit/></p> 
-                      <p class="TxtElements">Gestión de<br></br>Perfiles</p>
-                  </div>
-                  <div id="Elemento4">
-                      <p class="Icono_Menu"><FaArchive/></p> 
-                      <p class="TxtElements">Registro de  <br></br>Activos Fijos </p>
-                  </div>
+                  
               </div>
           </div>
           <div class="Ventanas">
@@ -71,5 +63,4 @@ function App() {
   </body>
     );
   }
-
-export default App
+export default Ventana_jefeejecutivo
