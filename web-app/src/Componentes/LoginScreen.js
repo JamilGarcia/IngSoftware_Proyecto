@@ -60,7 +60,7 @@ const LoginScreen = () => {
         /*Metodo para verificar usuario en la base de datos al hacer fetch */
         try {
             const body = {login_Email, login_Password}; //Recordatorio de cambiar este code
-            const respuesta = await fetch('http://localhost:5000', {
+            const respuesta = await fetch('http://localhost:5000', {/*Modificar direccion de server*/ 
                 method: 'POST',
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(body)
@@ -84,9 +84,6 @@ const LoginScreen = () => {
             console.error(err.message); 
         }
     }
-
-  
-
 
     return (
         <div className= "fondo-pantalla">
@@ -114,5 +111,4 @@ const LoginScreen = () => {
         </div>
     );
 }
-
 export default LoginScreen;

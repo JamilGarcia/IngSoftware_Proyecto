@@ -1,4 +1,4 @@
-const {  verifyUser } = require('../controllers/Login_Controller');
+const {  verifyUser } = require('../controladores/Login_Controller');
 const router = require('express').Router();
 //router.get('/getUsers',getUsers);
 
