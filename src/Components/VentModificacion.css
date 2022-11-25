@@ -1,4 +1,4 @@
-.App-header {
+.RectanguloSuperiorRosa {
   background-color: #f6c6dc;
   min-height: 50vh;
   display: flex;
@@ -9,7 +9,7 @@
   color: #ec428b;
 }
 
-.debajo {
+.RectanguloInferiorBlanco {
   background-color: #ffffff;
   min-height: 50vh;
   display: flex;
@@ -27,7 +27,7 @@
   font-size: 20px;
 }
 
-.centered {
+.CuadroCentrado {
   width: 1200px;
   height: 600px;
   background-color: white;

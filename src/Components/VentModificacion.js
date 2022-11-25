@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 export const VentModificacion = () => {
+  {
+    /*STATES PARA GUARDAR LA INFO ESCRITA EN LOS TEXT BOX*/
+  }
   const [Firstname, setFirstName] = useState("");
   const [Middlename, setMiddleName] = useState("");
   const [FirstLastname, setFirstLastName] = useState("");
@@ -14,9 +17,11 @@ export const VentModificacion = () => {
 
   return (
     <div className="App">
-      <header className="App-header"></header>
+      {/*RECTANGULO SUPERIOR ROSA*/}
+      <header className="RectanguloSuperiorRosa"></header>
 
-      <div class="centered">
+      {/*CUADRO CENTRADO DONDE VA TODA LA DATA*/}
+      <div class="CuadroCentrado">
         <img src={avatar} className="avatar-logo" alt="avatar" />
         <button className="CambiarFoto">Cambiar Foto</button>
         <button className="GuardarCambios">Guardar cambios</button>
@@ -100,8 +105,9 @@ export const VentModificacion = () => {
           </form>
         </div>
       </div>
-
-      <div className="debajo">
+      {/*RECTANGULO INFERIOR ROSA*/}
+      <div className="RectanguloInferiorBlanco">
+        {/*MOVERNOS A VENTANA DE DATOS DEL PERFIL*/}
         <Link to="/" className="MoverPerfil">
           Datos de Perfil
         </Link>

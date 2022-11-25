@@ -7,6 +7,7 @@ function App() {
   return (
     <Router>
       <Routes>
+        {/* RUTAS DE LAS VENTANAS */}
         <Route path="/" element={<VentanaPerfil />} />
         <Route path="/Modificacion" element={<VentModificacion />} />
       </Routes>

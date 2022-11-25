@@ -2,7 +2,7 @@
   text-align: left;
 }
 
-.App-header {
+.ParteSuperiorRosa {
   background-color: #f6c6dc;
   min-height: 50vh;
   display: flex;
@@ -39,7 +39,7 @@
   padding-left: 1000px;
 }
 
-.footer {
+.ParteInferiorBlanca {
   background-color: #ffffff;
   min-height: 50vh;
   display: flex;
