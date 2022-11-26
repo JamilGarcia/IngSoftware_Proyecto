@@ -1,0 +1,6 @@
+Lista modulos
+1. cors
+2. dotenv
+3. express
+4. nodemon
+5. pg
