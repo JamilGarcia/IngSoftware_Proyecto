@@ -59,11 +59,17 @@
 
 .FirstName input {
   width: 200px;
+  height: 25px;
   border: 2px solid grey;
   position: absolute;
   left: 0px;
   top: 40px;
   border-radius: 4px;
+}
+
+.nameLabel{
+  color:red;
+  font-size: 15px;
 }
 
 .MiddleName {
@@ -75,6 +81,7 @@
 
 .MiddleName input {
   width: 200px;
+  height: 25px;
   border: 2px solid grey;
   position: absolute;
   left: 0px;
@@ -91,11 +98,17 @@
 
 .FirstLastName input {
   width: 200px;
+  height: 25px;
   border: 2px solid grey;
   position: absolute;
   left: 0px;
   top: 40px;
   border-radius: 4px;
+}
+
+.firstLastNameLabel{
+  color:red;
+  font-size: 15px;
 }
 
 .SecondLastName {
@@ -107,11 +120,17 @@
 
 .SecondLastName input {
   width: 200px;
+  height: 25px;
   border: 2px solid grey;
   position: absolute;
   left: 0px;
   top: 40px;
   border-radius: 4px;
+}
+
+.secondLastNameLabel{
+  color:red;
+  font-size: 15px;
 }
 
 .Correo {
@@ -123,11 +142,17 @@
 
 .Correo input {
   width: 300px;
+  height: 25px;
   border: 2px solid grey;
   position: absolute;
   left: 0px;
   top: 40px;
   border-radius: 4px;
+}
+
+.correoLabel{
+  color:red;
+  font-size: 15px;
 }
 
 .FechaNacimiento {
@@ -139,11 +164,17 @@
 
 .FechaNacimiento input {
   width: 200px;
+  height: 25px;
   border: 2px solid grey;
   position: absolute;
   left: 0px;
   top: 40px;
   border-radius: 4px;
+}
+
+.fechaNacimientoLabel{
+  color:red;
+  font-size: 15px;
 }
 
 .GuardarCambios {

@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./logo.svg";
+
 import "./VentanaPerfil.css";
 import LogoComunicarte from "./LogoComunicarte.png";
 import { FaBirthdayCake } from "react-icons/fa";
@@ -16,7 +16,7 @@ export const VentanaPerfil = () => {
           className="Comunicarte-logo"
           alt="LogoComunicarte"
         />
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={LogoComunicarte} className="App-logo" alt="logo" />
         <div className="name">Paco Armando Perez Garcia</div>
         <div className="puesto">Gerente</div>
       </header>
