@@ -1,4 +1,4 @@
-const downloadEmailAttachments = require("download-email-attachments");
+/*const downloadEmailAttachments = require("download-email-attachments");
 const moment = require("moment");
 const opDir = "/Users/miguel/Desktop/Prueba_Descarga";
 //const opDir = "C:/Users/admin/Desktop/Attachments";
@@ -47,3 +47,4 @@ var reTry = 1;
   downloadEmailAttachments(paraObj, onEnd);
   
 
+*/

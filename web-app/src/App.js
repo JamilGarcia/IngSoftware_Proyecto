@@ -1,7 +1,6 @@
 import './Hojas-de-estilo/bootstrap.min.css'
 import './Hojas-de-estilo/Navbar-With-Button-icons.css'
 import './Hojas-de-estilo/styles.css'
-import './App.css';
 import { Route, Routes, Navigate, Outlet} from 'react-router-dom';
 import Home_Gerente from './Componentes/GerenteScreen';
 import LoginScreen from './Componentes/LoginScreen';
