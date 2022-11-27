@@ -1,35 +1,29 @@
-import React, {useState} from 'react';
-import '../Hojas-de-estilo/LoginScreen.css'; 
+import React, {useState, useContext} from 'react';
+import './LoginScreen.css'; 
 import {AiOutlineMail} from 'react-icons/ai';
 import {FaLock} from 'react-icons/fa';
-import { useNavigate} from 'react-router-dom';
-
+import { AuthContext } from '../Context/AuthContext';
 
 const LoginScreen = () => {
     //Destructuring de datos de entrada, correo y contraseña
     const [entradasLogin,setEntradasLogin] = useState({login_Email: '',login_Password: ''});
     const {login_Email, login_Password} = entradasLogin;
-   
     const [formErrors, setFormErrors] = useState({errorEmail: '',errorPassword: ''});
-
-    const [isSubmit, setIsSubmit] = useState(false);//Valor para verificar que se dio al boton ingresar
-    const navigate = useNavigate();
-    /*Metodo para manejar cambios en inputs de texto */
-    const onChange = (e) => {
+    const {loginUsuario} = useContext(AuthContext);
+    const onChange = (e) => {/*Metodo para manejar cambios en inputs de texto */
         setEntradasLogin({...entradasLogin, [e.target.name]: e.target.value});
     }
 
     /*Metodo para manejar datos de ingreso de sesión*/ 
     const manejarIngreso = (e) => {
         e.preventDefault();//Prevenir que recargue la pagina
+        // const {login_Email, login_Password};
         try {
-            /*Actualizar errores */
             setFormErrors({...validarValor()});
             //Verificacion que no existan errores (verificacion de campos por bugs con errores)
-            if( (formErrors.errorEmail === '' && formErrors.errorPassword === '')  &&
+            if((formErrors.errorEmail === '' && formErrors.errorPassword === '')  &&
                 (login_Email !== '' && login_Password !== '')){
-                //Llamado a metodo que conecta con el back-end
-                verificarUser();
+                loginUsuario(login_Email, login_Password);//Llamado a metodo que conecta con el back-end
             }
         } catch (err) {
             console.error(err.message);
@@ -53,37 +47,6 @@ const LoginScreen = () => {
             lista_errores.errorPassword = '';
         return lista_errores;
     };
-    
-   // const navigate = useNavigate();
-
-    const verificarUser = async () => {
-        /*Metodo para verificar usuario en la base de datos al hacer fetch */
-        try {
-            const body = {login_Email, login_Password}; //Recordatorio de cambiar este code
-            const respuesta = await fetch('http://localhost:5000', {/*Modificar direccion de server*/ 
-                method: 'POST',
-                headers: {"Content-Type": "application/json"},
-                body: JSON.stringify(body)
-            }).then((respuesta) => respuesta.json()).catch((error) => {console.log(error)});
-            if(respuesta.Posicion !== ''){
-                setIsSubmit(true);
-                //Redireccionar a base de respuesta de Rest API
-                if(respuesta.Posicion=== "Gerente"){
-                    navigate('/gerente');
-                } else if(respuesta.Posicion === "Subgerente"){
-                    navigate('/subgerente');
-                } else {
-                    //Es ejecutivo de cuenta
-                    navigate('/ejecutivo_cuenta');
-                }
-            }else {
-                console.log("El usuario no es valido.")
-            }
-            
-        } catch (err) {
-            console.error(err.message); 
-        }
-    }
 
     return (
         <div className= "fondo-pantalla">
@@ -111,4 +74,5 @@ const LoginScreen = () => {
         </div>
     );
 }
+
 export default LoginScreen;
