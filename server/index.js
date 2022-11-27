@@ -1,9 +1,7 @@
 const express = require('express');
 const app = express();
 const cors = require("cors");
-const db = require('./db');
 const port = process.env.PORT || 5000;
-
 //process.env.NODE_ENV => production or undefined
 
 //Middleware

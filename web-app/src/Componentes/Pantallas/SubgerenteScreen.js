@@ -1,6 +1,6 @@
-import "../Hojas-de-estilo/bootstrap.min.css";
-import "../Hojas-de-estilo/Navbar-With-Button-icons.css";
-import "../Hojas-de-estilo/styles.css";
+import "../../Hojas-de-estilo/bootstrap.min.css";
+import "../../Hojas-de-estilo/Navbar-With-Button-icons.css";
+import "../../Hojas-de-estilo/styles.css";
 import { FaFileInvoiceDollar } from "react-icons/fa";
 import { FaCashRegister } from "react-icons/fa";
 import { FaUserEdit } from "react-icons/fa";

@@ -1,8 +1,8 @@
 import React, {useState, useContext} from 'react';
-import '../Hojas-de-estilo/LoginScreen.css'; 
+import  '../../Hojas-de-estilo/LoginScreen.css'; 
 import {AiOutlineMail} from 'react-icons/ai';
 import {FaLock} from 'react-icons/fa';
-import { AuthContext } from './Context/AuthContext';
+import { AuthContext } from '../Context/AuthContext';
 
 const LoginScreen = () => {
     //Destructuring de datos de entrada, correo y contraseña
@@ -10,6 +10,7 @@ const LoginScreen = () => {
     const {login_Email, login_Password} = entradasLogin;
     const [formErrors, setFormErrors] = useState({errorEmail: '',errorPassword: ''});
     const {loginUsuario} = useContext(AuthContext);
+
     const onChange = (e) => {/*Metodo para manejar cambios en inputs de texto */
         setEntradasLogin({...entradasLogin, [e.target.name]: e.target.value});
     }

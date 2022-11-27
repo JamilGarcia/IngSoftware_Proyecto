@@ -2,9 +2,9 @@ import './Hojas-de-estilo/bootstrap.min.css'
 import './Hojas-de-estilo/Navbar-With-Button-icons.css'
 import './Hojas-de-estilo/styles.css'
 import { Route, Routes} from 'react-router-dom';
-import Home_Gerente from './Componentes/GerenteScreen';
-import LoginScreen from './Componentes/LoginScreen';
-import Home_Subgerente from './Componentes/SubgerenteScreen'
+import Home_Gerente from './Componentes/Pantallas/GerenteScreen';
+import LoginScreen from './Componentes/Pantallas/LoginScreen';
+import Home_Subgerente from './Componentes/Pantallas/SubgerenteScreen'
 import { AuthProvider } from './Componentes/Context/AuthContext';
 import {ProtectedRoute} from './Componentes/Context/ProtectedRoute';
 

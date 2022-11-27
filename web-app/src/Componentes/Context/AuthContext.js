@@ -19,33 +19,36 @@ export const AuthProvider = ({children}) => {
         setDatosUsuario({correo_usuario: email});
         /*Metodo para verificar usuario en la base de datos al hacer fetch */
         try {
-            console.log("Hola");
-            const body = {login_Email: email, login_Password: password}; //Recordatorio de cambiar este code
-            const respuesta = await fetch('postgres://bzjzotnjsnygmw:e4cfb1e16da83acb0decbbd18981219e12525b51a1001e3cb3837d8593ff5468@ec2-54-86-214-124.compute-1.amazonaws.com:5432/d8lodrec6ir4ed', {
+            const body = {correo: email, password_usuario: password}; //Recordatorio de cambiar este code
+            const respuesta = await fetch('http://localhost:5000', {
                 method: 'POST',
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(body)
-            }).then((respuesta) => respuesta.json()).catch((error) => {console.log(error)});
-            if(respuesta.Posicion !== ''){
-                window.localStorage.setItem("isLoggedIn", "true");
-                setDatosUsuario({posicion_Usuario: respuesta.Posicion});
-                setLoggedIn(true);
-                //Redireccionar a base de respuesta de Rest API
-                if(respuesta.Posicion === "Gerente"){
-                    navigate('/gerente');
-                } else if(respuesta.Posicion === "Subgerente"){
-                    navigate('/subgerente');
-                } else {
-                    //Es ejecutivo de cuenta
-                    navigate('/ejecutivo_cuenta');
+            }).then((respuesta) => respuesta.json()).then((data) => {
+               
+                if(data.Posicion!== ''){
+                    //window.localStorage.setItem("isLoggedIn", "true");
+                    setDatosUsuario({posicion_Usuario: data.Posicion});
+                    setLoggedIn(current => !current);
+                    window.localStorage.setItem("isLoggedIn", true);
+                    //Posicion usuario,
+                    //Redireccionar a base de data de Rest API
+                    if(data.Posicion === "Gerente"){
+                        navigate('/gerente');
+                    } else if(data.Posicion === "Subgerente"){
+                        navigate('/subgerente');
+                    } else {
+                        //Es ejecutivo de cuenta
+                        navigate('/ejecutivo_cuenta');
+                    }
+                }else {
+                    console.log("El usuario no es valido.")
                 }
-            }else {
-                console.log("El usuario no es valido.")
-            }
+            }).catch((error) => {console.log(error)});
             
         } catch (err) {
             console.error(err.message); 
-        }
+        } 
     }
 
     const logoutUsuario = () => {
@@ -58,6 +61,10 @@ export const AuthProvider = ({children}) => {
         loggedIn,
         datosUsuario
     }
+
+    useEffect(() => {
+        console.log(loggedIn);
+    }, [loggedIn]);
 
     return(
         <AuthContext.Provider value={datosUsuario_Ingresado} >{children}</AuthContext.Provider>
