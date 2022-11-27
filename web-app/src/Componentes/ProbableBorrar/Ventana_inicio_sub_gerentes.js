@@ -1,24 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+import './Hojas-de-estilo/bootstrap.min.css'
+import './Hojas-de-estilo/Navbar-With-Button-icons.css'
+import './Hojas-de-estilo/styles.css'
+import './App.css';
+import { FaFileInvoiceDollar } from "react-icons/fa";
+import { FaCashRegister } from "react-icons/fa";
+import { FaUserEdit } from "react-icons/fa";
+import { FaArchive } from "react-icons/fa";
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Proyecto_ISW</title>
-    <link rel="stylesheet" href="/src/bootstrap.min.css">
-    <link rel="stylesheet" href="/src/Navbar-With-Button-icons.css">
-    <link rel="stylesheet" href="/src/styles.css">
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-  integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
-  crossorigin="anonymous"
-/>
-</head>
 
-<body>
-    <div class="estiloHeading"><img>
-        <h3 class="display-5">Programa</h3><img>
+function App() {
+  return (
+    <body>
+    <div class="estiloHeading">
+        <h3 class="display-5">Programa</h3>
     </div>
     <nav class="navbar navbar-light navbar-expand-md py-3" id="BarraHerramientas">
         <div class="container">
@@ -37,18 +31,20 @@
                 <p class="TxtMenuTitulo"><strong>MENU</strong></p>
             </div>
             <div id="MenuElementos" class="claseMenuElementos">
-                <div id="Elemento1">
-                    <p class="TxtElements"><strong>Elemento</strong></p>
+                <div id="Elemento1sub">
+                    <p class="Icono_Menu"><FaFileInvoiceDollar/></p> 
+                    <p class="TxtElements">Registrar  <br></br>Facturas</p>
+
                 </div>
-                <div id="Elemento3">
-                    <p class="TxtElements"><strong>Elemento</strong></p>
+                <div id="Elemento3sub">
+                <p class="Icono_Menu"><FaCashRegister/></p> 
+                    <p class="TxtElements">Registro de  <br></br>Activos Fijos</p>
                 </div>
-                <div id="Elemento2">
-                    <p class="TxtElements"><br><strong>Elemento</strong><br><br></p>
+                <div id="Elemento2sub">
+                    <p class="Icono_Menu"><FaUserEdit/></p> 
+                    <p class="TxtElements">Gestión <br></br>de Perfil</p>
                 </div>
-                <div id="Elemento4">
-                    <p class="TxtElements"><br><strong>Elemento</strong><br><br></p>
-                </div>
+                
             </div>
         </div>
         <div class="Ventanas">
@@ -56,7 +52,7 @@
                 <p class="TxtMenuTitulo"><strong>Descripcion De Ventana</strong></p>
             </div>
             <div id="Ventana1">
-                <div id="ventanaText"></div>
+                 <div id="ventanaText"></div>
             </div>
             <div id="TituloVentana2">
                 <p class="TxtMenuTitulo"><strong>Descripcion De Ventana</strong></p>
@@ -66,7 +62,8 @@
             </div>
         </div>
     </div>
-    <script src="../src/bootstrap.min.js"></script>
 </body>
+  );
+}
 
-</html>
+export default App;

@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import SideBar from "./Componentes/sidebar/SideBar";
+import Topbar from "./Componentes/Topbar/Topbar";
+//import Navbar from 'react-bootstrap/Navbar';
+//import Content from "./Componentes/sidebar/SubMenu";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [sidebarIsOpen, setSidebarOpen] = useState(true);
+  const toggleSidebar = () => setSidebarOpen(!sidebarIsOpen);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <BrowserRouter>
+      <Topbar/>
+        <Routes>
+            <Route path="/" element={
+                <><SideBar toggle={toggleSidebar} isOpen={sidebarIsOpen} /></>
+            }/>
+            <><Route path="/about" element={
+                <><SideBar toggle={toggleSidebar} isOpen={sidebarIsOpen} /></>
+            } /></> 
+            <Route path="/pages" element={
+                <SideBar toggle={toggleSidebar} isOpen={sidebarIsOpen} />
+            }/>
+            <Route path="/faq" element={
+                <SideBar toggle={toggleSidebar} isOpen={sidebarIsOpen} />
+            }/>
+            <Route path="/contact" element={
+                <SideBar toggle={toggleSidebar} isOpen={sidebarIsOpen} />
+            }/>
+        </Routes>
+      </BrowserRouter>
   );
-}
+};
 
 export default App;

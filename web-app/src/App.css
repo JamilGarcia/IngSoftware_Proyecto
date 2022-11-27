@@ -1,38 +1,144 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  width: 100%;
+  align-items: stretch;
+}
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #F3D5F1;
+}
+
+a,
+a:hover,
+a:focus {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+.sidebar {
+  min-width: 250px;
+  max-width: 250px;
+  background: #EC008C;
+  color: #fff;
+  margin-left: -250px;
+  transition: all 0.5s;
+  height: 100%;
+}
+
+.sidebar.is-open {
+  margin-left: 0;
+  transition: 0.5s;
+}
+
+.sidebar-header {
+  background: #ce037d;
+}
+
+.sidebar-header h3 {
+  color: #fff;
+  padding: 1em;
+}
+
+.sidebar ul p {
+  color: #fff;
+  padding: 10px;
+}
+
+.Elementos {
+  color: #ffffff;
+  padding: 10px;
+}
+.ElementosLargo {
+  color: #ffffff;
+  padding: 10px;
+}
+
+.tipoUsuario{
+  padding: 5rem;
+  font-size: 2rem;
+}
+
+.menu-open {
+  background: #EC008C;
+}
+
+.nav-item:hover {
+  color: #000000;
+  background: #fff;
+}
+
+.items-menu {
+  color: #fff;
+  background: #000000;
+}
+
+li a.dropdown-toggle::after {
+  display: inline-flex;
+  position: relative;
+  left: 60%;
+  top: 10%;
+}
+
+.sidebar-header > span {
+  position: relative;
+  float: right;
+  margin: 0.5em;
+  font-size: 2rem;
+  cursor: pointer;
+  display: none;
+}
+.side-menu {
+  height: calc(100vh - 130px);
+  overflow-y: scroll;
+}
+
+.side-menu::-webkit-scrollbar {
+  width: 10px;
+}
+
+.side-menu::-webkit-scrollbar-thumb {
+  background: #000000;
+  border-radius: 3px;
+}
+
+.side-menu::-webkit-scrollbar-thumb:hover {
+  background: #000000;
+}
+
+/* ---------------------------------------------------
+    TOPBAR STYLE
+----------------------------------------------------- */
+
+.topbar {
+  background:#ce037d;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-content: stretch;
+  height: 80px;
 }
 
-.App-link {
-  color: #61dafb;
+.topbar-left{
+  color: #fff;
+  font-size: 2.5rem;
+  padding-left: 0.6rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.topbar-right{
+  font-size: 1.5rem;
+  padding-right: 1rem;
+  color: #fff;
 }
+
+/* ---------------------------------------------------
+    DROPDOWN STYLE
+----------------------------------------------------- */
