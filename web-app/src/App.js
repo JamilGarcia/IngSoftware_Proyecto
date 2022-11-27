@@ -1,26 +1,90 @@
-import './Hojas-de-estilo/bootstrap.min.css'
-import './Hojas-de-estilo/Navbar-With-Button-icons.css'
-import './Hojas-de-estilo/styles.css'
-import { Route, Routes} from 'react-router-dom';
-import Home_Gerente from './Componentes/Pantallas/GerenteScreen';
-import LoginScreen from './Componentes/Pantallas/LoginScreen';
-import Home_Subgerente from './Componentes/Pantallas/SubgerenteScreen'
-import { AuthProvider } from './Componentes/Context/AuthContext';
-import {ProtectedRoute} from './Componentes/Context/ProtectedRoute';
+import React, { useState } from "react";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import SideBar from "./Componentes/sidebar/SideBar";
+import SideBarSG from "./Componentes/sidebar/SideBarSG";
+import SideBarEjec from "./Componentes/sidebar/SideBarEjec";
+import Topbar from "./Componentes/Topbar/Topbar";
+//import Navbar from 'react-bootstrap/Navbar';
+//import Content from "./Componentes/sidebar/SubMenu";
+import "./App.css";
 
-function App() {
-    return (
-        <AuthProvider>
-            <Routes>
-            <Route path="/" element={<LoginScreen />}/>
-                <Route element={<ProtectedRoute />}>
-                    <Route path="/gerente" element={<Home_Gerente/>} />
-                    <Route path="/subgerente" element={<Home_Subgerente />}/>
-                </Route>
-                {/* <Route path="/ejecutivo_cuenta" element = {<EjecutivoC/>}/> */}
-            </Routes>
-        </AuthProvider>
-    );
-  }
+const App = () => {
+  const [sidebarIsOpen, setSidebarOpen] = useState(true);
+  const toggleSidebar = () => setSidebarOpen(!sidebarIsOpen);
 
-export default App
+    if ("Gerente"){
+        return (
+            <BrowserRouter>
+            <Topbar/>
+              <Routes>
+                  <Route path="/" element={
+                      <><SideBar toggle={toggleSidebar} isOpen={sidebarIsOpen} /></>
+                  }/>
+                  <><Route path="/about" element={
+                      <><SideBar toggle={toggleSidebar} isOpen={sidebarIsOpen} /></>
+                  } /></> 
+                  <Route path="/pages" element={
+                      <SideBar toggle={toggleSidebar} isOpen={sidebarIsOpen} />
+                  }/>
+                  <Route path="/faq" element={
+                      <SideBar toggle={toggleSidebar} isOpen={sidebarIsOpen} />
+                  }/>
+                  <Route path="/contact" element={
+                      <SideBar toggle={toggleSidebar} isOpen={sidebarIsOpen} />
+                  }/>
+              </Routes>
+            </BrowserRouter>
+        );
+    } else if ("SubGerente") {
+        return (
+            <BrowserRouter>
+            <Topbar/>
+                <Routes>
+                    <Route path="/" element={
+                        <><SideBarSG toggle={toggleSidebar} isOpen={sidebarIsOpen} /></>
+                    }/>
+                    <><Route path="/about" element={
+                        <><SideBarSG toggle={toggleSidebar} isOpen={sidebarIsOpen} /></>
+                    } /></>
+                    <Route path="/pages" element={
+                        <SideBarSG toggle={toggleSidebar} isOpen={sidebarIsOpen} />
+                    }/>
+                    <Route path="/faq" element={
+                        <SideBarSG toggle={toggleSidebar} isOpen={sidebarIsOpen} />
+                    }/>
+                    <Route path="/contact" element={
+                        <SideBarSG toggle={toggleSidebar} isOpen={sidebarIsOpen} />
+                    }/>
+                </Routes>
+            </BrowserRouter>
+        );
+    } else if ("Ejecutivo") {
+        return (
+            <BrowserRouter>
+            <Topbar/>
+                <Routes>
+                    <Route path="/" element={
+                        <><SideBarEjec toggle={toggleSidebar} isOpen={sidebarIsOpen} /></>
+                    }/>
+                    <><Route path="/about" element={
+                        <><SideBarEjec toggle={toggleSidebar} isOpen={sidebarIsOpen} /></>
+                    } /></>
+                    <Route path="/pages" element={
+                        <SideBarEjec toggle={toggleSidebar} isOpen={sidebarIsOpen} />
+                    }/>
+                    <Route path="/faq" element={
+                        <SideBarEjec toggle={toggleSidebar} isOpen={sidebarIsOpen} />
+                    }/>
+                    <Route path="/contact" element={
+                        <SideBarEjec toggle={toggleSidebar} isOpen={sidebarIsOpen} />
+                    }/>
+                </Routes>
+            </BrowserRouter>
+        );
+    } else {
+        <h1>ERROR</h1>
+    }
+};
+
+export default App;
