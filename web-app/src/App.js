@@ -6,6 +6,7 @@ import { Route, Routes, Navigate, Outlet} from 'react-router-dom';
 import Home_Gerente from './Componentes/GerenteScreen';
 import LoginScreen from './Componentes/LoginScreen';
 import Home_Subgerente from './Componentes/SubgerenteScreen'
+import DescargarEstado from './Componentes/Funciones/DescargaEstadodeCuenta';
 
 function App() {
     return (
