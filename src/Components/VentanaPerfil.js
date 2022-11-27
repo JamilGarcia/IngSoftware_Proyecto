@@ -1,5 +1,4 @@
 import React from "react";
-
 import "./VentanaPerfil.css";
 import LogoComunicarte from "./LogoComunicarte.png";
 import { FaBirthdayCake } from "react-icons/fa";

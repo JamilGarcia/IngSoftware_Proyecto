@@ -1,0 +1,85 @@
+.RectanguloSuperior {
+  background-color: #f6c6dc;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #ec428b;
+}
+
+.RectanguloInferior {
+  background-color: #ffffff;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  color: black;
+}
+
+.CuadroCentro {
+  width: 1200px;
+  height: 600px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-style: solid;
+  border-color: grey;
+  text-align: center;
+  padding-top: 5%;
+}
+
+.Comunicarte-logo {
+  padding-left: 75%;
+}
+
+.Titulo {
+  color: grey;
+  font-size: 20px;
+  font-style: oblique;
+}
+
+.CuadrodeTexto {
+  width: 800px;
+  height: 120px;
+  border: 2px solid grey;
+  text-align: center;
+  border-radius: 4px;
+  top: 50px;
+}
+
+.BotonModificar {
+  background-color: #ec428b;
+  color: white;
+  font-size: 20px;
+  padding: 10px 60px;
+  border-radius: 5px;
+  margin: 10px 0px;
+  cursor: pointer;
+  border-color: grey;
+}
+
+.BotonGuardar {
+  background-color: #ec428b;
+  color: white;
+  font-size: 20px;
+  padding: 10px 60px;
+  border-radius: 5px;
+  margin: 10px 0px;
+  cursor: pointer;
+  border-color: grey;
+}
+
+.BotonEliminar {
+  background-color: #ec428b;
+  color: white;
+  font-size: 20px;
+  padding: 10px 60px;
+  border-radius: 5px;
+  margin: 10px 0px;
+  cursor: pointer;
+  border-color: grey;
+}

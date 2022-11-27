@@ -70,6 +70,7 @@
 .nameLabel{
   color:red;
   font-size: 15px;
+  font-style: italic;
 }
 
 .MiddleName {
@@ -109,6 +110,7 @@
 .firstLastNameLabel{
   color:red;
   font-size: 15px;
+  font-style: italic;
 }
 
 .SecondLastName {
@@ -131,6 +133,7 @@
 .secondLastNameLabel{
   color:red;
   font-size: 15px;
+  font-style: italic;
 }
 
 .Correo {
@@ -153,6 +156,7 @@
 .correoLabel{
   color:red;
   font-size: 15px;
+  font-style: italic;
 }
 
 .FechaNacimiento {
@@ -175,6 +179,7 @@
 .fechaNacimientoLabel{
   color:red;
   font-size: 15px;
+  font-style: italic;
 }
 
 .GuardarCambios {
