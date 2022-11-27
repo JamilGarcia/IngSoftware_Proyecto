@@ -1,8 +1,8 @@
 import React, {useState, useContext} from 'react';
-import './LoginScreen.css'; 
+import '../Hojas-de-estilo/LoginScreen.css'; 
 import {AiOutlineMail} from 'react-icons/ai';
 import {FaLock} from 'react-icons/fa';
-import { AuthContext } from '../Context/AuthContext';
+import { AuthContext } from './Context/AuthContext';
 
 const LoginScreen = () => {
     //Destructuring de datos de entrada, correo y contraseña
