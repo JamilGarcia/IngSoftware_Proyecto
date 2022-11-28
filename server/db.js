@@ -3,7 +3,7 @@ const {db} = require('./config');
 const { Client } = require('pg');
 /*
 const client = new Client({
-  connectionString: "postgres://bzjzotnjsnygmw:e4cfb1e16da83acb0decbbd18981219e12525b51a1001e3cb3837d8593ff5468@ec2-54-86-214-124.compute-1.amazonaws.com:5432/d8lodrec6ir4ed",
+  //connectionString: "",
   ssl: {
     rejectUnauthorized: false
   }
@@ -11,7 +11,7 @@ const client = new Client({
 
 
 const client = new Client({
-	connectionString: "postgres://bzjzotnjsnygmw:e4cfb1e16da83acb0decbbd18981219e12525b51a1001e3cb3837d8593ff5468@ec2-54-86-214-124.compute-1.amazonaws.com:5432/d8lodrec6ir4ed",
+	//connectionString: "",
 	ssl: {
 		rejectUnauthorized: false
 	}
