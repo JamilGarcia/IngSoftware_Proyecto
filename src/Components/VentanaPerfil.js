@@ -5,8 +5,22 @@ import { FaBirthdayCake } from "react-icons/fa";
 import { FaAt } from "react-icons/fa";
 import { FaStackExchange } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 export const VentanaPerfil = () => {
+
+  const [infoperfil, setInfoperfil] = useState([])
+
+  const cargarInfoUsuario = async() =>{
+    const response = await fetch('http://localhost:3000/')
+    const data = await response.json()
+    setInfoperfil(data)
+  }
+
+  useEffect(() => {
+    cargarInfoUsuario()
+  }, [])
+
   return (
     <div className="App">
       <header className="ParteSuperiorRosa">
@@ -16,7 +30,7 @@ export const VentanaPerfil = () => {
           alt="LogoComunicarte"
         />
         <img src={LogoComunicarte} className="App-logo" alt="logo" />
-        <div className="name">Paco Armando Perez Garcia</div>
+        <div className="name"></div>
         <div className="puesto">Gerente</div>
       </header>
 
