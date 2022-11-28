@@ -14,22 +14,22 @@ const SideBar = ({ isOpen, toggle }) => (
       <Nav vertical>
         <p className="tipoUsuario">*Gerente*</p>
         <NavItem>
-          <NavLink className = "Elementos" tag={Link} to={"/about"}>
+          <NavLink className = "Elementos" tag={Link} to={"/generar_factura"}>
             <FaFileInvoiceDollar/> Generar factura
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink className = "Elementos" tag={Link} to={"/pages"}>
+          <NavLink className = "Elementos" tag={Link} to={"/flujo_efectivo"}>
             <FaCashRegister/> Flujo de Efectivo
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink className = "Elementos" tag={Link} to={"/faq"}>
+          <NavLink className = "Elementos" tag={Link} to={"/gestion_perfiles"}>
           <FaUserEdit></FaUserEdit> Gestión de Perfiles
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink className = "ElementosLargo" tag={Link} to={"/contact"}>
+          <NavLink className = "ElementosLargo" tag={Link} to={"/registro_activos_flujos"}>
             <FaArchive></FaArchive> Registro de Activos Fijos
           </NavLink>
         </NavItem>

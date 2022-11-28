@@ -53,6 +53,9 @@ export const AuthProvider = ({children}) => {
 
     const logoutUsuario = () => {
         //window.localStorage.removeItem();
+        setLoggedIn(false);
+        setDatosUsuario(initialDatosUser);
+        navigate('/');
     }
 
     const datosUsuario_Ingresado = {
