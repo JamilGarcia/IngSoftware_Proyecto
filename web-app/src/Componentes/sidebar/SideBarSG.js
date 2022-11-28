@@ -7,17 +7,13 @@ import { FaCashRegister } from "react-icons/fa";
 import { FaUserEdit } from "react-icons/fa"; 
 //import SubMenu from "./SubMenu";
 
-const SideBarSG = ({ isOpen, toggle }) => (
-  <div className={classNames("sidebar", { "is-open": isOpen })}>
-    <div className="sidebar-header">
-      <span color="info" onClick={toggle} style={{ color: "#fff" }}>
-        &times;
-      </span>
-      <h3>ComunicArte</h3>
-    </div>
+const SideBarSG = ({ isOpen, toggle }) => {
+
+  return (
+    <div className={classNames("sidebar", { "is-open": isOpen })}>
     <div className="side-menu">
       <Nav vertical className="list-unstyled pb-3">
-        <p>*SubGerente*</p>
+        <p className="tipoUsuario">Subgerente</p>
         <NavItem>
           <NavLink className = "Elementos" tag={Link} to={"/about"}>
             <FaFileInvoiceDollar/> Registrar Facturas
@@ -36,6 +32,8 @@ const SideBarSG = ({ isOpen, toggle }) => (
       </Nav>
     </div>
   </div>
-);
+
+  )
+}
 
 export default SideBarSG;

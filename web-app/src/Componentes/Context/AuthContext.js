@@ -16,7 +16,6 @@ export const AuthProvider = ({children}) => {
 
     const loginUsuario = async (email, password) => {
 
-        setDatosUsuario({correo_usuario: email});
         /*Metodo para verificar usuario en la base de datos al hacer fetch */
         try {
             const body = {correo: email, password_usuario: password}; //Recordatorio de cambiar este code
@@ -28,7 +27,9 @@ export const AuthProvider = ({children}) => {
                
                 if(data.Posicion!== ''){
                     //window.localStorage.setItem("isLoggedIn", "true");
-                    setDatosUsuario({posicion_Usuario: data.Posicion});
+                    setDatosUsuario({
+                        correo: email,
+                        posicion_Usuario: data.Posicion});
                     setLoggedIn(current => !current);
 
                     //Posicion usuario,
@@ -36,10 +37,10 @@ export const AuthProvider = ({children}) => {
                     if(data.Posicion === "Gerente"){
                         navigate('/Gerente');
                     } else if(data.Posicion === "Subgerente"){
-                        navigate('/subgerente');
+                        navigate('/Subgerente');
                     } else {
                         //Es ejecutivo de cuenta
-                        navigate('/ejecutivo_cuenta');
+                        navigate('/Ejecutivo_cuenta');
                     }
 
                     /*Local Storage*/
@@ -58,6 +59,9 @@ export const AuthProvider = ({children}) => {
 
     const logoutUsuario = () => {
         //window.localStorage.removeItem();
+        localStorage.setItem("isLoggedIn","false");
+        localStorage.setItem("puestoEmpresa","");
+        localStorage.setItem("correoUsuario","");
         setLoggedIn(false);
         setDatosUsuario(initialDatosUser);
         navigate('/');
