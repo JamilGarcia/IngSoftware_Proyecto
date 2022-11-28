@@ -6,15 +6,17 @@ import { FaFileInvoiceDollar } from "react-icons/fa";
 import { FaCashRegister } from "react-icons/fa"; 
 import { FaUserEdit } from "react-icons/fa"; 
 import { FaArchive } from "react-icons/fa";
+import Ventanas from "./Ventanas"; 
 //import SubMenu from "./SubMenu";
 
 const SideBar = ({ isOpen, toggle }) => (
+  <div class = "separaciones">
   <div className={classNames("sidebar", { "is-open": isOpen })}>
     <div className="side-menu">
-      <Nav vertical>
+      <Nav vertical className="side-menu">
         <p className="tipoUsuario">*Gerente*</p>
         <NavItem>
-          <NavLink className = "Elementos" tag={Link} to={"/generar_factura"}>
+          <NavLink className = "Elementos" >
             <FaFileInvoiceDollar/> Generar factura
           </NavLink>
         </NavItem>
@@ -34,6 +36,10 @@ const SideBar = ({ isOpen, toggle }) => (
           </NavLink>
         </NavItem>
       </Nav>
+    </div>
+  </div>
+    <div>
+      <Ventanas/>
     </div>
   </div>
 );

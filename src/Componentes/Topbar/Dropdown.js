@@ -10,21 +10,18 @@ import { AuthContext } from '../Context/AuthContext';
 
 const  BotonDrop =() => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
-
-  const {logoutUsuario} = useContext(AuthContext);
-    
-
+    const {logoutUsuario} = useContext(AuthContext);
     const toggle = () => setDropdownOpen((prevState) => !prevState);
 
     return (
-      <Dropdown className='dropdown' isOpen={dropdownOpen} toggle={toggle} direction={'down'}>
-          <DropdownToggle caret >Nombre Persona</DropdownToggle>
+      <Dropdown class = "dropdown" isOpen={dropdownOpen} toggle={toggle}>
+          <DropdownToggle caret>Nombre Persona</DropdownToggle>
           <DropdownMenu>
             <DropdownItem header>Perfil</DropdownItem>
-            <DropdownItem tag={Link} to={"/ver_perfil"}>Ver Perfil</DropdownItem>
+            <DropdownItem tag={Link} to={"../verperfil"}>Ver Perfil</DropdownItem>
             <DropdownItem tag={Link} to={"/modificar_perfil"}>Modificar Perfil</DropdownItem>
             <DropdownItem divider />
-            <DropdownItem toggle={logoutUsuario()} >Cerrar Sesion</DropdownItem>
+            <DropdownItem onClick= {logoutUsuario}>Cerrar Sesion</DropdownItem>
           </DropdownMenu>
         </Dropdown>
     );
