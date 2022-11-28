@@ -22,9 +22,9 @@ exports.verifyUser = async (req,res) => {
                 //Contraseña es la misma
                 // console.log("Inicio de sesión exitoso!");
                 // console.log(usuario.rows[0].posicion);
-                res.json(
-                    {"Posicion": usuario.rows[0].posicion}
-                    );
+                // res.json(
+                //     {"Posicion": usuario.rows[0].posicion}
+                //     );
             } else {
                 return res.status(401).send("Correo o contraseña es incorrecto.");
             }
@@ -33,5 +33,24 @@ exports.verifyUser = async (req,res) => {
         }
     } catch (error) {
         res.status(500).send("Server Error");
+    }
+} 
+
+exports.testUser = async (req,res) => {
+    try {
+
+        const usuario = await db.query("SELECT * FROM users;");
+
+        console.log("el usuario es:")
+        console.log(usuario)
+       
+        console.log(req.body);
+        // /*2. Revisar si usuario no existe (Tirar error) $1 es para sustituir con login_Email
+        // Usar query para ver si existe dentro de la base el correo*/
+
+        return res.status(200).send(usuario)
+        
+    } catch (error) {
+        res.status(500).send("Server Error", error);
     }
 } 
