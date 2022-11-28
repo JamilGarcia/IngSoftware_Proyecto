@@ -30,21 +30,26 @@ export const AuthProvider = ({children}) => {
                     //window.localStorage.setItem("isLoggedIn", "true");
                     setDatosUsuario({posicion_Usuario: data.Posicion});
                     setLoggedIn(current => !current);
-                    window.localStorage.setItem("isLoggedIn", true);
+
                     //Posicion usuario,
                     //Redireccionar a base de data de Rest API
                     if(data.Posicion === "Gerente"){
-                        navigate('/gerente');
+                        navigate('/Gerente');
                     } else if(data.Posicion === "Subgerente"){
                         navigate('/subgerente');
                     } else {
                         //Es ejecutivo de cuenta
                         navigate('/ejecutivo_cuenta');
                     }
+
+                    /*Local Storage*/
+                    localStorage.setItem("isLoggedIn", "true");
+                    localStorage.setItem("puestoEmpresa", data.Posicion);
+                    localStorage.setItem("correoUsuario", datosUsuario.correo_usuario);
                 }else {
                     console.log("El usuario no es valido.")
                 }
-            }).catch((error) => {console.log(error)});
+            }).catch((error) => {alert(String.fromCodePoint(0x26a0)+" El usuario no es valido "+String.fromCodePoint(0x26a0))});
             
         } catch (err) {
             console.error(err.message); 
@@ -65,9 +70,6 @@ export const AuthProvider = ({children}) => {
         datosUsuario
     }
 
-    useEffect(() => {
-        console.log(loggedIn);
-    }, [loggedIn]);
 
     return(
         <AuthContext.Provider value={datosUsuario_Ingresado} >{children}</AuthContext.Provider>

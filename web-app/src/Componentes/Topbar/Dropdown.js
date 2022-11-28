@@ -21,10 +21,10 @@ const  BotonDrop =() => {
           <DropdownToggle caret >Nombre Persona</DropdownToggle>
           <DropdownMenu>
             <DropdownItem header>Perfil</DropdownItem>
-            <DropdownItem tag={Link} to={"/ver_perfil"}>Ver Perfil</DropdownItem>
+            <DropdownItem tag={Link} to={"/perfil_usuario"}>Ver Perfil</DropdownItem>
             <DropdownItem tag={Link} to={"/modificar_perfil"}>Modificar Perfil</DropdownItem>
             <DropdownItem divider />
-            <DropdownItem toggle={logoutUsuario()} >Cerrar Sesion</DropdownItem>
+            <DropdownItem  onClick={logoutUsuario}>Cerrar Sesion</DropdownItem>
           </DropdownMenu>
         </Dropdown>
     );
