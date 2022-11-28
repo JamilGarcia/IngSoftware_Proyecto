@@ -2,7 +2,7 @@
   "name": "ingsoftware_proyecto",
   "version": "1.0.0",
   "description": "",
-  "main": "App.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "heroku-start": "cd web-app && npm install && npm start"
