@@ -1,7 +1,0 @@
-//Lista 
-
-react-router-dom
-bootstrap
-react-bootstrap
-react-icons
-reactstrap
