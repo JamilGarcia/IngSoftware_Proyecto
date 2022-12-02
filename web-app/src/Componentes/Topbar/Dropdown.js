@@ -17,8 +17,8 @@ const  BotonDrop =() => {
     const toggle = () => setDropdownOpen((prevState) => !prevState);
 
     return (
-      <Dropdown className='dropdown' isOpen={dropdownOpen} toggle={toggle} direction={'down'}>
-          <DropdownToggle caret >Nombre Persona</DropdownToggle>
+      <Dropdown isOpen={dropdownOpen} toggle={toggle} direction={'down'}>
+          <DropdownToggle caret> Nombre </DropdownToggle>
           <DropdownMenu>
             <DropdownItem header>Perfil</DropdownItem>
             <DropdownItem tag={Link} to={"/perfil_usuario"}>Ver Perfil</DropdownItem>
