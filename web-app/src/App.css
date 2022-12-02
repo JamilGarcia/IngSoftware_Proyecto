@@ -9,7 +9,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background: #F3D5F1;
+  background: #f2e2e2;
 }
 
 a,
@@ -24,11 +24,17 @@ a:focus {
     SIDEBAR STYLE
 ----------------------------------------------------- */
 .sidebar {
-  min-width: 250px;
-  max-width: 250px;
-  background: #EC008C;
-  color: #fff;
+  min-width: 220px;
+  max-width: 220px;
+  background: #ff97d9;
+  color : #fff;
   transition: all 0.5s;
+  border-bottom-right-radius: 26px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #7d7d7e;
+  border-left: none;
+  border-top: none;
 }
 
 .sidebar.is-open {
@@ -70,8 +76,8 @@ a:focus {
 }
 
 .nav-item:hover {
-  color: #000000;
-  background: #fff;
+  color: white;
+  background: white;
 }
 
 .items-menu {
@@ -116,7 +122,7 @@ li a.dropdown-toggle::after {
 ----------------------------------------------------- */
 
 .topbar {
-  background:#ce037d;
+  background:#ff69b4;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -124,6 +130,8 @@ li a.dropdown-toggle::after {
   align-items: center;
   align-content: center;
   height: 80px;
+  border-bottom: 1px solid #7d7d7e;
+
 }
 
 .topbar-left{
@@ -142,7 +150,10 @@ li a.dropdown-toggle::after {
     DROPDOWN STYLE
 ----------------------------------------------------- */
 
-
+.dropdown{
+  width: 100%;
+  
+}
 
 
 /* ---------------------------------------------------
