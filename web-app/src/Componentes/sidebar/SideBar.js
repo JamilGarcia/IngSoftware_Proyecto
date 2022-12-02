@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { NavItem, NavLink, Nav } from "reactstrap";
 import classNames from "classnames";
 import { Link } from "react-router-dom";
@@ -12,37 +12,52 @@ import Ventanas from "../Pantallas/Ventanas";
 
 const SideBar = ({ isOpen, toggle }) => {
   const { datosUsuario } = useContext(AuthContext);
+
+  const [subVentanaActual, setSubVentanaActual] = useState(0);
+
+  const actualizarSubVentana = (subventana) =>{
+    if(subventana === 0){
+      //Generar factura
+      setSubVentanaActual(0);
+      console.log("Generar factura");
+    } else if(subventana === 1){
+      //Flujo de efectivo
+      setSubVentanaActual(1);
+    } else if(subventana === 2){
+      //Gestion de perfiles
+      setSubVentanaActual(2);
+    } else if(subventana === 3){
+      //Registro de Activos Fijos
+      setSubVentanaActual(3);
+    } else {
+      setSubVentanaActual(0);
+      alert("Ocurrio un error inesperado con la actualizar subventana");
+    }
+  }
+  
   return (
-    <div class="separaciones">
+    <div className="separaciones">
       <div className={classNames("sidebar", { "is-open": isOpen })}>
         <div className="side-menu">
           <Nav vertical className="side-menu">
             <p className="tipoUsuario">Gerente</p>
             <NavItem>
-              <NavLink className="Elementos">
+              <NavLink className="Elementos"  onClick={() => actualizarSubVentana(0)}>
                 <FaFileInvoiceDollar /> Generar factura
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className="Elementos" tag={Link} to={"/flujo_efectivo"}>
+              <NavLink className="Elementos" onClick={() => actualizarSubVentana(1)}>
                 <FaCashRegister /> Flujo de Efectivo
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink
-                className="Elementos"
-                tag={Link}
-                to={"/gestion_perfiles"}
-              >
+              <NavLink className="Elementos" onClick={() => actualizarSubVentana(2)}>
                 <FaUserEdit></FaUserEdit> Gestión de Perfiles
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink
-                className="ElementosLargo"
-                tag={Link}
-                to={"/registro_activos_flujos"}
-              >
+              <NavLink className="Elementos" onClick={() => actualizarSubVentana(3)}>
                 <FaArchive></FaArchive> Registro de Activos Fijos
               </NavLink>
             </NavItem>
@@ -50,7 +65,7 @@ const SideBar = ({ isOpen, toggle }) => {
         </div>
       </div>
       <div>
-        <Ventanas />
+        <Ventanas seleccionVentana={subVentanaActual}>Generar factura</Ventanas>
       </div>
     </div>
   );
