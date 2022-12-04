@@ -1,6 +1,63 @@
-.btn {
-    background-color: #ec428c;
-    color: white;
-    width: 20%;
-    height: 30%;
-}
+
+/********************************************
+    Ver Perfil STYLE
+    ********************************************/
+    .fotoPerfil{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+        align-content: stretch;
+      }
+      .foto{
+        width: 20rem;
+        background-color: #fff;
+        border-radius: 6px;
+        margin-left: 3rem;
+        margin-top: 2rem;
+        margin-bottom: 0rem;
+      
+      }
+      
+      .fotoNombre{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        align-content: center;
+      }
+      .infoPerfil{
+        padding-left: 2rem !important;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: stretch;
+        align-content: center;
+      }
+      
+      .nombrePerfil{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+        margin-left: 0rem;
+      }
+      
+      .textoPerfil{
+        padding: 1.5rem;
+        color: #EC008C;
+      }
+      
+      .forms{
+        padding-top: .5rem;
+        padding-left: 2rem;
+        background: #F3D5F1;
+        border-color: #F3D5F1;
+        border:none;
+        width: 20rem;
+      }

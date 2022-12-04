@@ -1,4 +1,14 @@
 import React from "react";
+import GenerarFactura from "./VentanasGerente/GenerarFactura";
+import FlujoEfectivo from "./VentanasGerente/FlujoEfectivo";
+import GestionPerfiles from "./VentanasGerente/GestionPerfiles";
+import RegistroActivosFijos from "./VentanasGerente/RegistroActivosFijos";
+import GestionPerfil from "./VentanasSubGerente/GestionPerfil";
+import RegistrarFacturas from "./VentanasSubGerente/RegistrarFacturas";
+import RegistrarActivosFijos from "./VentanasSubGerente/RegistroActivosFijos";
+import Cotizacion from "./VentanasEjecutivo/Cotizacion";
+import Facturacion from "./VentanasEjecutivo/Facturacion";
+import styles from '../../Hojas-de-estilo/Ventana.css';
 
 const Ventanas = (props) => {
     
@@ -7,28 +17,63 @@ const Ventanas = (props) => {
         //Generar Factura
         return (
             <div>
-                <h1>Generar Factura</h1>
+                <GenerarFactura/>
             </div>
         );
     } else if(props.seleccionVentana === 1){
         //Flujo de Efectivo
         return (
             <div>
-                <h1>Flujo de Efectivo</h1>
+                <FlujoEfectivo/>
             </div>
         );
     } else if(props.seleccionVentana === 2){
         //Gestion de Perfiles
         return (
             <div>
-                <h1>Gestion de Perfiles</h1>
+                <GestionPerfiles/>
             </div>
         );
     } else if(props.seleccionVentana === 3){
         //Registro de Activos Fijos
         return (
             <div>
-                <h1>Registro de Activos Fijos</h1>
+                <RegistroActivosFijos/>
+            </div>
+        );
+    } else if(props.seleccionVentana === 4){
+        //Registrar Facturas
+        return (
+            <div>
+                <RegistrarFacturas/>
+            </div>
+        );
+    } else if(props.seleccionVentana === 5){
+        //Registro de Activos Fijos
+        return (
+            <div>
+                <RegistrarActivosFijos/>
+            </div>
+        );
+    } else if(props.seleccionVentana === 6){
+        //Gestión de Perfil
+        return (
+            <div>
+                <GestionPerfil/>
+            </div>
+        );
+    } else if(props.seleccionVentana === 7){
+        //Facturación
+        return (
+            <div>
+                <Facturacion/>
+            </div>
+        );
+    } else if(props.seleccionVentana === 8){
+        //Cotización
+        return (
+            <div>
+                <Cotizacion/>
             </div>
         );
     } else {
