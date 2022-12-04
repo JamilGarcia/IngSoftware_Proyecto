@@ -8,6 +8,7 @@ import { FaUserEdit } from "react-icons/fa";
 import { FaArchive } from "react-icons/fa";
 import { AuthContext } from "../Context/AuthContext";
 import Ventanas from "../Pantallas/Ventanas";
+import styles from "../../Hojas-de-estilo/SideBar.css";
 //import SubMenu from "./SubMenu";
 
 const SideBar = ({ isOpen, toggle }) => {

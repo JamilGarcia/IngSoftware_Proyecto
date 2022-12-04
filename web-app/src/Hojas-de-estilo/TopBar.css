@@ -1,0 +1,28 @@
+/* ---------------------------------------------------
+    TOPBAR STYLE
+----------------------------------------------------- */
+
+.topbar {
+    background:#ff69b4;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    height: 80px;
+    border-bottom: 1px solid #7d7d7e;
+  
+  }
+  
+  .topbar-left{
+    color: #fff;
+    font-size: 2.5rem;
+    padding-left: 0.6rem;
+  }
+  
+  .topbar-right{
+    font-size: 1.5rem;
+    padding-right: 1rem;
+    color: #fff;
+  }
