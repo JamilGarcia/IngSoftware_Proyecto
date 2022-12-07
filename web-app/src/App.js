@@ -4,7 +4,7 @@ import LoginScreen from './Componentes/Pantallas/LoginScreen';
 import { AuthProvider } from './Componentes/Context/AuthContext';
 import {ProtectedRoute} from './Componentes/Context/ProtectedRoute';
 import { useEffect, useState } from 'react';
-import { VentanaModificacion } from './Componentes/Pantallas/VentanaModificacion';
+import  VentanaModificacion  from './Componentes/Pantallas/VentanaModificacion';
 import VerPerfil from './Componentes/Pantallas/VerPerfilScreen';
 import Home_Subgerente from './Componentes/Pantallas/Home_Subgerente';
 import Home_EjecutivoC from './Componentes/Pantallas/Home_EjecutivoC';
