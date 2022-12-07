@@ -12,32 +12,76 @@ const VentanaModificacion = () => {
     const [Middlename, setMiddleName] = useState("");
     const [Lastnames, setLastNames] = useState("");
     const [Correo, setCorreo] = useState("");
-    const [FechaNacimiento, setFechaNacimiento] = useState("");
     const [error, setError] = useState(false);
-  
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      if (
-        Firstname.length == 0 ||
-        Lastnames.length == 0 ||
-        Correo.length == 0 ||
-        FechaNacimiento.length == 0
-      ) {
-        setError(true);
-      }
+    const { datosUsuario } = useContext(AuthContext);
+    const datosObtenidos = {
+      primer_nombre: "",
+      segundo_nombre: "",
+      apellidos: "",
+      correo_user: "",
     };
   
+    const [dataPerfilUsuario, setDataPerfilUsuario] = useState(datosObtenidos);
+    const obtenerDatos = async () => {
+      const { correo } = datosUsuario;
+      const body = { correo: correo };
+      console.log(body);
+      // "https://comunicartewebapp-api.herokuapp.com/modificar_perfil"
+      try {
+        const respuesta = await fetch(
+         'http://localhost:5000/modificar_perfil',
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(body),
+          }
+        ).then((respuesta) => respuesta.json()).then((data) => {
+            //Modificar data.fecha_de_nacimiento
+            // y data.fecha_de_inicio antes de setear
+            setDataPerfilUsuario({
+              primer_nombre: data.primer_nombre,
+              segundo_nombre: data.segundo_nombre,
+              apellidos: data.apellidos,
+              correo_user: data.correo,
+            });
+          });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    useEffect(() => {
+      window.onbeforeunload = obtenerDatos();
+    },[]);
+    // const handleSubmit = (e) => {
+    //   e.preventDefault();
+    //   if (
+    //     Firstname.length == 0 ||
+    //     Lastnames.length == 0 ||
+    //     Correo.length == 0 ||
+    //     FechaNacimiento.length == 0
+    //   ) {
+    //     setError(true);
+    //   }
+    // };
+
+    const handlePrimerNombre = (e) => {
+      setDataPerfilUsuario({
+        ...dataPerfilUsuario,
+        primer_nombre: e.target.value})
+    };
+
+    const navigate = useNavigate();
     return (
       <div className="fondo-pantallaModificacion">
         <div class="caja-centro">
           <div className="top">
             <img
-              src={LogoComunicarte}
+              src="/images/Logo_ComunicArte_Final.png"
               className="Comunicarte-logo"
               alt="LogoComunicarte"
             />
             <img 
-            src={avatar} 
+            src="/images/avatar.png"
             className="Avatar-logo" 
             alt="Avatar" 
             />
@@ -46,16 +90,17 @@ const VentanaModificacion = () => {
           <div className="InputsNombre">
             <div className="FirstName">
               <input
-                placeholder="Primer Nombre"
+                placeholder={dataPerfilUsuario.primer_nombre}
                 type="text"
-                value={Firstname}
-                onChange={(e) => setFirstName(e.target.value)}
+                value={dataPerfilUsuario.primer_nombre}
+                name= "primer_nombre"
+                onChange={handlePrimerNombre}
               />
             </div>
   
             <div className="SecondName">
               <input
-                placeholder="Segundo Nombre"
+                placeholder={dataPerfilUsuario.segundo_nombre}
                 type="text"
                 value={Middlename}
                 onChange={(e) => setMiddleName(e.target.value)}
@@ -66,7 +111,7 @@ const VentanaModificacion = () => {
           <div className="InputsApellido-Correo">
             <div className="Apellidos">
               <input
-                placeholder="Apellidos"
+                placeholder={dataPerfilUsuario.primer_nombre}
                 type="text"
                 value={Lastnames}
                 onChange={(e) => setLastNames(e.target.value)}
@@ -75,7 +120,7 @@ const VentanaModificacion = () => {
   
             <div className="Correo">
               <input
-                placeholder="Correo"
+                placeholder={dataPerfilUsuario.primer_nombre}
                 type="text"
                 value={Correo}
                 onChange={(e) => setCorreo(e.target.value)}
@@ -83,7 +128,7 @@ const VentanaModificacion = () => {
             </div>
           </div>
           <div className="botonesModificacion">
-            <button className="botonModificacion">Volver</button>
+            <button className="botonModificacion" onClick={() => navigate(-1)} >Volver</button>
             <button className="botonModificacion">Guardar Cambios</button>
           </div>
         </div>

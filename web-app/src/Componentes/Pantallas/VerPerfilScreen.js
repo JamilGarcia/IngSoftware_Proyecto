@@ -27,9 +27,10 @@ const VerPerfil = () => {
     console.log(correo);
     const body = { correo: correo };
     console.log(body);
+    // "https://comunicartewebapp-api.herokuapp.com/perfil_usuario"
     try {
       const respuesta = await fetch(
-        "https://comunicartewebapp-api.herokuapp.com/perfil_usuario",
+       'http://localhost:5000/perfil_usuario',
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -38,6 +39,8 @@ const VerPerfil = () => {
       )
         .then((respuesta) => respuesta.json())
         .then((data) => {
+          //Modificar data.fecha_de_nacimiento
+          // y data.fecha_de_inicio antes de setear
           setDataPerfilUsuario({
             primer_nombre: data.primer_nombre,
             segundo_nombre: data.segundo_nombre,
@@ -92,7 +95,7 @@ const VerPerfil = () => {
           Fecha Inicio: {dataPerfilUsuario.fecha_de_inicio}
         </p>
         <div className="botones">
-          <button className="boton">Volver</button>
+          <button className="boton" onClick={() => navigate(-1)} >Volver</button>
           <button className="boton">Editar Perfil</button>
         </div>
       </div>
