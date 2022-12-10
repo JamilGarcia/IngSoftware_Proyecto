@@ -1,144 +1,159 @@
 import React from "react";
-import "../../Hojas-de-estilo/VentanaModificacion.css";
-import avatar from "../Imagenes/avatar.png";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import  '../../Hojas-de-estilo/VentanaModificacion.css';
+import {useNavigate} from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../Context/AuthContext";
 
-export const VentanaModificacion = () => {
-  {
-    /*STATES PARA GUARDAR LA INFO ESCRITA EN LOS TEXT BOX*/
-  }
-  const [Firstname, setFirstName] = useState("");
-  const [Middlename, setMiddleName] = useState("");
-  const [FirstLastname, setFirstLastName] = useState("");
-  const [SecondLastname, setSecondLastName] = useState("");
-  const [Correo, setCorreo] = useState("");
-  const [FechaNacimiento, setFechaNacimiento] = useState("");
-  const [error, setError] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (
-      Firstname.length == 0 ||
-      FirstLastname.length == 0 ||
-      SecondLastname.length == 0 ||
-      Correo.length == 0 ||
-      FechaNacimiento.length == 0
-    ) {
-      setError(true);
+const VentanaModificacion = () => {
+    {
+      /*STATES PARA GUARDAR LA INFO ESCRITA EN LOS TEXT BOX*/
     }
-  };
+    const [Firstname, setFirstName] = useState("");
+    const [Middlename, setMiddleName] = useState("");
+    const [Lastnames, setLastNames] = useState("");
+    const [Correo, setCorreo] = useState("");
+    const [error, setError] = useState(false);
+    const { datosUsuario } = useContext(AuthContext);
+    const datosObtenidos = {
+      primer_nombre: "",
+      segundo_nombre: "",
+      apellidos: "",
+      correo_user: "",
+    };
+  
+    const [dataPerfilUsuario, setDataPerfilUsuario] = useState(datosObtenidos);
+    const obtenerDatos = async () => {
+      const { correo } = datosUsuario;
+      const body = { correo: correo };
+      console.log(body);
+      // "https://comunicartewebapp-api.herokuapp.com/modificar_perfil" 'http://localhost:5000/modificar_perfil'
+      try {
+        const respuesta = await fetch(
+         "https://comunicartewebapp-api.herokuapp.com/modificar_perfil",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(body),
+          }
+        ).then((respuesta) => respuesta.json()).then((data) => {
+            //Modificar data.fecha_de_nacimiento
+            // y data.fecha_de_inicio antes de setear
+            setDataPerfilUsuario({
+              primer_nombre: data.primer_nombre,
+              segundo_nombre: data.segundo_nombre,
+              apellidos: data.apellidos,
+              correo_user: data.correo,
+            });
+          });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    useEffect(() => {
+      window.onbeforeunload = obtenerDatos();
+    },[]);
+    // const handleSubmit = (e) => {
+    //   e.preventDefault();
+    //   if (
+    //     Firstname.length == 0 ||
+    //     Lastnames.length == 0 ||
+    //     Correo.length == 0 ||
+    //     FechaNacimiento.length == 0
+    //   ) {
+    //     setError(true);
+    //   }
+    // };
 
-  return (
-    <div className="App">
-      {/*RECTANGULO SUPERIOR ROSA*/}
-      <header className="RectanguloSuperiorRosa"></header>
+    const handlePrimerNombre = (e) => {
+      setDataPerfilUsuario({
+        ...dataPerfilUsuario,
+        primer_nombre: e.target.value})
+    };
 
-      {/*CUADRO CENTRADO DONDE VA TODA LA DATA*/}
-      <div class="CuadroCentrado">
-        <img src={avatar} className="avatar-logo" alt="avatar" />
-        <button className="CambiarFoto">Cambiar Foto</button>
+    const handleSegundoNombre = (e) => {
+      setDataPerfilUsuario({
+        ...dataPerfilUsuario,
+        segundo_nombre: e.target.value})
+    };
 
-        <form onSubmit={handleSubmit}>
-          <div className="FirstName">
-            <input
-              placeholder="Primer Nombre"
-              type="text"
-              value={Firstname}
-              onChange={(e) => setFirstName(e.target.value)}
+    const handleApellidos = (e) => {
+      setDataPerfilUsuario({
+        ...dataPerfilUsuario,
+        apellidos: e.target.value})
+    };
+
+    const handleCorreo = (e) => {
+      setDataPerfilUsuario({
+        ...dataPerfilUsuario,
+        correo_user: e.target.value})
+    };
+
+    const navigate = useNavigate();
+    return (
+      <div className="fondo-pantallaModificacion">
+        <div class="caja-centro">
+          <div className="top">
+            <img
+              src="/images/Logo_ComunicArte_Final.png"
+              className="Comunicarte-logo"
+              alt="LogoComunicarte"
             />
-
-            {error && Firstname.length <= 0 ? (
-              <label className="nameLabel">Nombre no puede estar vacio</label>
-            ) : (
-              ""
-            )}
-          </div>
-
-          <div className="MiddleName">
-            <input
-              placeholder="Segundo Nombre"
-              type="text"
-              value={Middlename}
-              onChange={(e) => setMiddleName(e.target.value)}
+            <img 
+            src="/images/avatar.png"
+            className="Avatar-logo" 
+            alt="Avatar" 
             />
           </div>
-
-          <div className="FirstLastName">
-            <input
-              placeholder="Primer Apellido"
-              type="text"
-              value={FirstLastname}
-              onChange={(e) => setFirstLastName(e.target.value)}
-            />
-
-            {error && FirstLastname.length <= 0 ? (
-              <label className="firstLastNameLabel">
-                Apellido no puede estar vacio
-              </label>
-            ) : (
-              ""
-            )}
+          <button className="botonCambiarFoto">Cambiar Foto</button>
+          <div className="InputsNombre">
+            <div className="FirstName">
+              <input
+                placeholder={dataPerfilUsuario.primer_nombre}
+                type="text"
+                value={dataPerfilUsuario.primer_nombre}
+                name= "primer_nombre"
+                onChange={handlePrimerNombre}
+              />
+            </div>
+  
+            <div className="SecondName">
+              <input
+                placeholder={dataPerfilUsuario.segundo_nombre}
+                type="text"
+                value={dataPerfilUsuario.segundo_nombre}
+                name= "segundo_nombre"
+                onChange={handleSegundoNombre}
+              />
+            </div>
           </div>
-
-          <div className="SecondLastName">
-            <input
-              placeholder="Segundo Apellido"
-              type="text"
-              value={SecondLastname}
-              onChange={(e) => setSecondLastName(e.target.value)}
-            />
-
-            {error && SecondLastname.length <= 0 ? (
-              <label className="secondLastNameLabel">
-                Apellido no puede estar vacio
-              </label>
-            ) : (
-              ""
-            )}
+  
+          <div className="InputsApellido-Correo">
+            <div className="Apellidos">
+              <input
+                placeholder={dataPerfilUsuario.apellidos}
+                type="text"
+                value={dataPerfilUsuario.apellidos}
+                name= "apellidos"
+                onChange={handleApellidos}
+              />
+            </div>
+  
+            <div className="Correo">
+              <input
+                placeholder={dataPerfilUsuario.correo_user}
+                type="text"
+                value={dataPerfilUsuario.correo_user}
+                name= "correo"
+                onChange={handleCorreo}
+              />
+            </div>
           </div>
-
-          <div className="Correo">
-            <input
-              placeholder="Correo Electronico"
-              type="text"
-              value={Correo}
-              onChange={(e) => setCorreo(e.target.value)}
-            />
-
-            {error && Correo.length <= 0 ? (
-              <label className="correoLabel">Correo no puede estar vacio</label>
-            ) : (
-              ""
-            )}
+          <div className="botonesModificacion">
+            <button className="botonModificacion" onClick={() => navigate(-1)} >Volver</button>
+            <button className="botonModificacion">Guardar Cambios</button>
           </div>
-
-          <div className="FechaNacimiento">
-            <input
-              placeholder="Fecha de Nacimiento"
-              type="text"
-              value={FechaNacimiento}
-              onChange={(e) => setFechaNacimiento(e.target.value)}
-            />
-
-            {error && FechaNacimiento.length <= 0 ? (
-              <label className="fechaNacimientoLabel">
-                Fecha Nacimiento no puede estar vacio
-              </label>
-            ) : (
-              ""
-            )}
-          </div>
-          <button className="GuardarCambios">Guardar cambios</button>
-        </form>
-      </div>
-      {/*RECTANGULO INFERIOR ROSA*/}
-      <div className="RectanguloInferiorBlanco">
-        {/*MOVERNOS A VENTANA DE DATOS DEL PERFIL*/}
-        <Link to="/" className="MoverPerfil">
-          Datos de Perfil
-        </Link>
-      </div>
-    </div>
-  );
+        </div>
+      </div> 
+    );
 };
+export default VentanaModificacion;
