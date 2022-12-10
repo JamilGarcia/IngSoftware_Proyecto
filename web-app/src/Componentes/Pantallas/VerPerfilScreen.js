@@ -27,10 +27,10 @@ const VerPerfil = () => {
     console.log(correo);
     const body = { correo: correo };
     console.log(body);
-    // "https://comunicartewebapp-api.herokuapp.com/perfil_usuario"
+    // "https://comunicartewebapp-api.herokuapp.com/perfil_usuario" 'http://localhost:5000/perfil_usuario'
     try {
       const respuesta = await fetch(
-       'http://localhost:5000/perfil_usuario',
+        "https://comunicartewebapp-api.herokuapp.com/perfil_usuario",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

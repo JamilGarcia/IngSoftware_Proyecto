@@ -26,10 +26,10 @@ const VentanaModificacion = () => {
       const { correo } = datosUsuario;
       const body = { correo: correo };
       console.log(body);
-      // "https://comunicartewebapp-api.herokuapp.com/modificar_perfil"
+      // "https://comunicartewebapp-api.herokuapp.com/modificar_perfil" 'http://localhost:5000/modificar_perfil'
       try {
         const respuesta = await fetch(
-         'http://localhost:5000/modificar_perfil',
+         "https://comunicartewebapp-api.herokuapp.com/modificar_perfil",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -70,6 +70,24 @@ const VentanaModificacion = () => {
         primer_nombre: e.target.value})
     };
 
+    const handleSegundoNombre = (e) => {
+      setDataPerfilUsuario({
+        ...dataPerfilUsuario,
+        segundo_nombre: e.target.value})
+    };
+
+    const handleApellidos = (e) => {
+      setDataPerfilUsuario({
+        ...dataPerfilUsuario,
+        apellidos: e.target.value})
+    };
+
+    const handleCorreo = (e) => {
+      setDataPerfilUsuario({
+        ...dataPerfilUsuario,
+        correo_user: e.target.value})
+    };
+
     const navigate = useNavigate();
     return (
       <div className="fondo-pantallaModificacion">
@@ -102,8 +120,9 @@ const VentanaModificacion = () => {
               <input
                 placeholder={dataPerfilUsuario.segundo_nombre}
                 type="text"
-                value={Middlename}
-                onChange={(e) => setMiddleName(e.target.value)}
+                value={dataPerfilUsuario.segundo_nombre}
+                name= "segundo_nombre"
+                onChange={handleSegundoNombre}
               />
             </div>
           </div>
@@ -111,19 +130,21 @@ const VentanaModificacion = () => {
           <div className="InputsApellido-Correo">
             <div className="Apellidos">
               <input
-                placeholder={dataPerfilUsuario.primer_nombre}
+                placeholder={dataPerfilUsuario.apellidos}
                 type="text"
-                value={Lastnames}
-                onChange={(e) => setLastNames(e.target.value)}
+                value={dataPerfilUsuario.apellidos}
+                name= "apellidos"
+                onChange={handleApellidos}
               />
             </div>
   
             <div className="Correo">
               <input
-                placeholder={dataPerfilUsuario.primer_nombre}
+                placeholder={dataPerfilUsuario.correo_user}
                 type="text"
-                value={Correo}
-                onChange={(e) => setCorreo(e.target.value)}
+                value={dataPerfilUsuario.correo_user}
+                name= "correo"
+                onChange={handleCorreo}
               />
             </div>
           </div>
