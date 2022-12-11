@@ -50,7 +50,7 @@ export const AuthProvider = ({children}) => {
                 }else {
                     console.log("El usuario no es valido.")
                 }
-            }).catch((error) => {alert(String.fromCodePoint(0x26a0)+" El usuario no es valido "+String.fromCodePoint(0x26a0))});
+            }).catch((error) => {alert(String.fromCodePoint(0x26a0)+" El usuario  o contraseña no es valida "+String.fromCodePoint(0x26a0))});
             
         } catch (err) {
             console.error(err.message); 

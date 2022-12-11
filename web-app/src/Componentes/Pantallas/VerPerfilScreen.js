@@ -60,7 +60,7 @@ const VerPerfil = () => {
   }, []);
   return (
     <div className="fondo-pantalla">
-      <div class="caja-perfil">
+      <div className="caja-perfil">
         <div className="top">
           <img
             src="/images/Logo_ComunicArte_Final.png"
@@ -80,17 +80,17 @@ const VerPerfil = () => {
         </div>
 
         <div className="datosPerfil">
-          <p classname="fechanac">
+          <p className="fechanac">
             <FaBirthdayCake />
             Fecha Nacimiento: {dataPerfilUsuario.fecha_de_nacimiento}
           </p>
 
-          <p classname="correo">
+          <p clasName="correo">
             <FaAt />
             Correo: {dataPerfilUsuario.correo_user}
           </p>
         </div>
-        <p classname="fechaini">
+        <p className="fechaini">
           <FaStackExchange />
           Fecha Inicio: {dataPerfilUsuario.fecha_de_inicio}
         </p>
