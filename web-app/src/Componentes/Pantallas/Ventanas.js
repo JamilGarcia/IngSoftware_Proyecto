@@ -9,6 +9,7 @@ import RegistrarActivosFijos from "./VentanasSubGerente/RegistroActivosFijos";
 import Cotizacion from "./VentanasEjecutivo/Cotizacion";
 import Facturacion from "./VentanasEjecutivo/Facturacion";
 import styles from '../../Hojas-de-estilo/Ventana.css';
+import ModificarPerfil from "./ModificarPerfil";
 
 const Ventanas = (props) => {
     
@@ -76,6 +77,13 @@ const Ventanas = (props) => {
                 <Cotizacion/>
             </div>
         );
+    } else if(props.seleccionVentana === 9){
+        //Modificar Empleado
+        return (
+            <div>
+                <ModificarPerfil />
+            </div>
+        );
     } else {
         return (
             <div>
@@ -83,7 +91,6 @@ const Ventanas = (props) => {
             </div>
         );
     }
-        
     
 }
 
