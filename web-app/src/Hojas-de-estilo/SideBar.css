@@ -22,6 +22,7 @@
   }
   
   .sidebar.is-open {
+    display: inline-block;
     margin-left: 0;
     transition: 0.5s;
     

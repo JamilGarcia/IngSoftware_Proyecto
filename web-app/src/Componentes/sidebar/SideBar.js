@@ -77,9 +77,9 @@ const SideBar = ({ isOpen, toggle }) => {
           </Nav>
         </div>
       </div>
-      <div id="testdeladerecha">
+      {/* <div id="testdeladerecha"> */}
         <Ventanas seleccionVentana={subVentanaActual} >Generar factura</Ventanas>
-      </div>
+      {/* </div> */}
     </div>
   );
 };

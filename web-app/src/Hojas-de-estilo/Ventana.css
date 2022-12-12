@@ -12,10 +12,10 @@
 }
 
 .separaciones {
-  display: flex;
+  /* display: flex; */
   /* display: inline-block; */
-  flex-direction: row;
-  flex-wrap: wrap-reverse;
+  /* flex-direction: row; */
+  /* flex-wrap: wrap-reverse; */
   align-items: stretch;
   justify-content: flex-start;
   align-content: stretch;
@@ -30,4 +30,10 @@
 .container {
   display: grid;
   grid-template-columns: auto auto;
+}
+
+.ventanasaladerecha{
+  display: inline-block;
+  vertical-align: top;
+  width: 85%;
 }

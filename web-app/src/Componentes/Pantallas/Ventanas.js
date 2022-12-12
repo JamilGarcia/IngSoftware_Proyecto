@@ -23,7 +23,7 @@ const Ventanas = (props) => {
   } else if (props.seleccionVentana === 1) {
     //Flujo de Efectivo
     return (
-      <div>
+      <div className='ventanasaladerecha'>
         <FlujoEfectivo />
       </div>
     );

@@ -1,11 +1,7 @@
 import "../../../Hojas-de-estilo/FlujoEfectivo.css";
 
 export const FlujoEfectivo = () => {
-  return (
-    <>
-      <div className="caja-flujodeefectivo">hola como estamos</div>
-    </>
-  );
+  return <h1 className="caja-flujodeefectivo">hola como estamos</h1>;
 };
 
 export default FlujoEfectivo;
