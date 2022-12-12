@@ -69,7 +69,7 @@ const LoginScreen = () => {
                             name="login_Password" className="form-control" value={login_Password} onChange={e => onChange(e)}/>
                     </div>
                     <p className="indicador_error">{formErrors.errorPassword}</p>
-                    <button type="submit" className="btn">Ingresar</button>
+                    <button type="submit" className="btnlogin">Ingresar</button>
 	            </form>
             </div>
         </div>

@@ -1,9 +1,15 @@
 /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
+/* .divderecha{
+  display: inline-block;
+  padding-left: 85%;
+} */
+
 .sidebar {
-    min-width: 250px;
-    max-width: 250px;
+    /* display: inline-block; */
+    min-width: 15%;
+    max-width: 15%;
     background: #ff97d9;
     color : #fff;
     transition: all 0.5s;
@@ -79,7 +85,7 @@
     display: none;
   }
   .side-menu {
-    height: calc(100vh - 130px);
+    height: calc(100vh - 80px);
     overflow-y: scroll;
   }
   
@@ -95,3 +101,4 @@
   .side-menu::-webkit-scrollbar-thumb:hover {
     background: #000000;
   }
+

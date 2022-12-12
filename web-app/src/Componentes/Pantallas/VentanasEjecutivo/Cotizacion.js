@@ -1,10 +1,11 @@
-const Cotizacion = () => {
+import "../../../Hojas-de-estilo/Cotizacion.css";
 
-    return (
-      <>
-      <h1>Cotizacion</h1>
-      </>
+const Cotizacion = () => {
+  return (
+    <div className="containerdecotizacion">
+      <div className="centrado">Hola</div>
+    </div>
   );
-  }
-  
-  export default Cotizacion;
+};
+
+export default Cotizacion;
