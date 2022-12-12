@@ -1,6 +1,8 @@
-const FlujoEfectivo = () => {
+import "../../../Hojas-de-estilo/FlujoEfectivo.css";
+
+export const FlujoEfectivo = () => {
   return (
-    <>
+    <div className="flujoefectivotable">
       <table class="table table-striped">
         <thead>
           <tr>
@@ -39,7 +41,7 @@ const FlujoEfectivo = () => {
           </tr>
         </tbody>
       </table>
-    </>
+    </div>
   );
 };
 
