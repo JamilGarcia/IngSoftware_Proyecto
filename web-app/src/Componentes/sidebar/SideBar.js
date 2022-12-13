@@ -1,41 +1,33 @@
-import React, { useContext, useState } from "react";
-import { NavItem, NavLink, Nav } from "reactstrap";
+import React from "react";
+import { NavItem, NavLink, Nav} from "reactstrap";
 import classNames from "classnames";
-import { Link } from "react-router-dom";
-import { FaFileInvoiceDollar } from "react-icons/fa";
-import { FaCashRegister } from "react-icons/fa";
-import { FaUserEdit } from "react-icons/fa";
-import { FaArchive } from "react-icons/fa";
-import { AuthContext } from "../Context/AuthContext";
-import Ventanas from "../Pantallas/Ventanas";
-import styles from "../../Hojas-de-estilo/SideBar.css";
+import "../../Hojas-de-estilo/SideBar.css";
 //import SubMenu from "./SubMenu";
+import { SideBarDataG } from "../Data/SideBarDataG";
 
 const SideBar = ({ isOpen, toggle }) => {
-  const { datosUsuario } = useContext(AuthContext);
 
-  const [subVentanaActual, setSubVentanaActual] = useState(0);
-
-  const actualizarSubVentana = (subventana) =>{
-    if(subventana === 0){
-      //Generar factura
-      setSubVentanaActual(0);
-      console.log("Generar factura");
-    } else if(subventana === 1){
-      //Flujo de efectivo
-      setSubVentanaActual(1);
-    } else if(subventana === 2){
-      //Gestion de perfiles
-      setSubVentanaActual(2);
-    } else if(subventana === 3){
-      //Registro de Activos Fijos
-      setSubVentanaActual(3);
-    } else {
-      setSubVentanaActual(0);
-      alert("Ocurrio un error inesperado con la actualizar subventana");
-    }
-  }
+  return(
+    <div className="sidebar">
+      <p className="tipoUsuario">Gerente</p>
+      {
+          SideBarDataG.map((item, index)=> {
+            return (
+              <div key = {index} className="Elementos">
+                  <NavLink to={item.path}>
+                    {item.icon}
+                     {item.title}
+                  </NavLink>
+              </div>
+            )
+          })
+        }
+  </div>
+  );
   
+};
+
+  /*
   return (
     <div className="separaciones">
       <div className={classNames("sidebar", { "is-open": isOpen })}>
@@ -70,6 +62,7 @@ const SideBar = ({ isOpen, toggle }) => {
       </div>
     </div>
   );
-};
+  */
+
 
 export default SideBar;

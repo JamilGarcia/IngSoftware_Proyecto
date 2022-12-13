@@ -1,11 +1,9 @@
-/* ---------------------------------------------------
+/* /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
 .sidebar {
-    min-width: 250px;
-    max-width: 250px;
     background: #ff97d9;
-    color : #fff;
+    color : #ffffff;
     transition: all 0.5s;
     border-bottom-right-radius: 26px;
     border-style: solid;
@@ -13,47 +11,37 @@
     border-color: #7d7d7e;
     border-left: none;
     border-top: none;
+    height: 87vh;
   }
   
-  .sidebar.is-open {
+  /* .sidebar.is-open {
     margin-left: 0;
     transition: 0.5s;
     
-  }
+  } */
   
   .sidebar-header {
     background: #ce037d;
   }
-  
-  .sidebar-header h3 {
-    color: #fff;
-    padding: 1em;
-  }
-  
-  .sidebar ul p {
+
+   .sidebar ul p {
     color: #fff;
     padding: 10px;
-  }
+  } 
   
-  .Elementos {
+   .Elementos {
     color: #ffffff;
     padding: 10px;
-  }
-  .ElementosLargo {
-    color: #ffffff;
-    padding: 10px;
-  }
+  } 
+ 
   
   .tipoUsuario{
-    padding: 5rem;
+    padding: 1rem;
     font-size: 2rem;
-  }
+  } 
+
   
-  .menu-open {
-    background: #EC008C;
-  }
-  
-  .nav-item:hover {
+  .nav-link:hover {
     color: white;
     background: white;
   }
@@ -61,37 +49,34 @@
   .items-menu {
     color: #fff;
     background: #000000;
-  }
+  } 
   
-  li a.dropdown-toggle::after {
+   /* li a.dropdown-toggle::after {
     display: inline-flex;
     position: relative;
     left: 60%;
     top: 10%;
-  }
+  }  */
   
-  .sidebar-header > span {
+   .sidebar-header > span {
     position: relative;
     float: right;
     margin: 0.5em;
     font-size: 2rem;
     cursor: pointer;
     display: none;
-  }
-  .side-menu {
-    height: calc(100vh - 130px);
-    overflow-y: scroll;
-  }
-  
-  .side-menu::-webkit-scrollbar {
+  } 
+
+  /* .side-menu::-webkit-scrollbar {
     width: 10px;
-  }
+  } */
   
-  .side-menu::-webkit-scrollbar-thumb {
+  /* .side-menu::-webkit-scrollbar-thumb {
     background: #000000;
     border-radius: 3px;
-  }
+  } */
   
-  .side-menu::-webkit-scrollbar-thumb:hover {
+   /* .sidebar::-webkit-scrollbar-thumb:hover {
     background: #000000;
-  }
+  }  */
+ 

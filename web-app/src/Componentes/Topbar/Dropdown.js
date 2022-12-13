@@ -37,7 +37,6 @@ const  BotonDrop =() => {
     window.onbeforeunload = obtenerNombreUsuario();
   },[]);
     
-
     const toggle = () => setDropdownOpen((prevState) => !prevState);
 
     return (

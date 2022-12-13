@@ -2,33 +2,20 @@ import React, {useState} from "react";
 import SideBar from "../sidebar/SideBar";
 import Topbar from "../Topbar/Topbar";
 import "../../App.css";
+import "../../Hojas-de-estilo/MainPage.css";
+import NavPage from "./VentanasGerente/NavPage";
 const Home_Gerente = () => {
 
-    const [sidebarIsOpen, setSidebarOpen] = useState(true);
-    const toggleSidebar = () => setSidebarOpen(!sidebarIsOpen);
-
   return (
-    <>
-    <Topbar/>
-        <SideBar toggle={toggleSidebar} isOpen={sidebarIsOpen} />
+    <React.Fragment>
+      <Topbar/>
+        <div className="grid-container">
+          <SideBar />
+          <div></div>
+        </div>
+    </React.Fragment>
 
-          {/*
-            <><Route path="/about" element={
-              <><SideBar toggle={toggleSidebar} isOpen={sidebarIsOpen} /></>
-          } /></> 
-          <Route path="/pages" element={
-              <SideBar toggle={toggleSidebar} isOpen={sidebarIsOpen} />
-          }/>
-          <Route path="/faq" element={
-              <SideBar toggle={toggleSidebar} isOpen={sidebarIsOpen} />
-          }/>
-          <Route path="/contact" element={
-              <SideBar toggle={toggleSidebar} isOpen={sidebarIsOpen} />
-          }/>
-          
-          */ }
-      </>
-);
+  );
 }
 
 export default Home_Gerente;
