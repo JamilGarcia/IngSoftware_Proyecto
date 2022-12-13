@@ -15,7 +15,7 @@ const Ventanas = (props) => {
   if (props.seleccionVentana === 0) {
     //Generar Factura
     return (
-      <div>
+      <div className='ventanasaladerecha'>
         <GenerarFactura />
         {/* <ModificarPerfil /> */}
       </div>
@@ -30,62 +30,62 @@ const Ventanas = (props) => {
   } else if (props.seleccionVentana === 2) {
     //Gestion de Perfiles
     return (
-      <div>
+      <div className='ventanasaladerecha'>
         <GestionPerfiles />
       </div>
     );
   } else if (props.seleccionVentana === 3) {
     //Registro de Activos Fijos
     return (
-      <div>
+      <div className='ventanasaladerecha'>
         <RegistroActivosFijos />
       </div>
     );
   } else if (props.seleccionVentana === 4) {
     //Registrar Facturas
     return (
-      <div>
+      <div className='ventanasaladerecha'>
         <RegistrarFacturas />
       </div>
     );
   } else if (props.seleccionVentana === 5) {
     //Registro de Activos Fijos
     return (
-      <div>
+      <div className='ventanasaladerecha'>
         <RegistrarActivosFijos />
       </div>
     );
   } else if (props.seleccionVentana === 6) {
     //Gestión de Perfil
     return (
-      <div>
+      <div className='ventanasaladerecha'>
         <GestionPerfil />
       </div>
     );
   } else if (props.seleccionVentana === 7) {
     //Facturación
     return (
-      <div>
+      <div className='ventanasaladerecha'>
         <Facturacion />
       </div>
     );
   } else if (props.seleccionVentana === 8) {
     //Cotización
     return (
-      <div>
+      <div className='ventanasaladerecha'>
         <Cotizacion />
       </div>
     );
   } else if (props.seleccionVentana === 9) {
     //Modificar Empleado
     return (
-      <div>
+      <div className='ventanasaladerecha'>
         <ModificarPerfil />
       </div>
     );
   } else {
     return (
-      <div>
+      <div className='ventanasaladerecha'>
         <h1>Ocurrio un error.</h1>
       </div>
     );
