@@ -2,7 +2,8 @@ import "../../../Hojas-de-estilo/FlujoEfectivo.css";
 
 export const FlujoEfectivo = () => {
   return (
-    <table
+    <><input type="file" id="inpFile"></input>
+    <button type="button" id="btnUpload">Upload</button><table
       class="table table-striped"
       data-toggle="table"
       data-url="data2.json"
@@ -17,7 +18,7 @@ export const FlujoEfectivo = () => {
           <th scope="col">Categoria</th>
         </tr>
       </thead>
-    </table>
+    </table></>
   );
 };
 
