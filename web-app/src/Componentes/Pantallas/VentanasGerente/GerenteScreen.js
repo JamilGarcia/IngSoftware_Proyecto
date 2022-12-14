@@ -12,7 +12,7 @@ const Home_Gerente = () => {
       <Topbar/>
         <div className="grid-container">
           <div><SideBar /></div>
-          <div><Outlet /></div>     
+          <Outlet /> 
         </div>
     </React.Fragment>
 

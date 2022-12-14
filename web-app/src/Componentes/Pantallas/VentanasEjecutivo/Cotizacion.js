@@ -11,20 +11,20 @@ const Cotizacion = () => {
             <h2 className="h2">COTIZACION</h2>
             <div className='divColumnasCO'>
             <div>
-            <p className="tituloMOD">PRIMER NOMBRE</p>
-              <input type = "PrimerNombre" placeholder ="PrimerNombre" id="PrimerNombre" name="PrimerNombre" className="form-co" />
-              <p className="tituloMOD">SEGUNDO NOMBRE</p>
-              <input type = "SegundoNombre" placeholder ="SegundoNombre" id="SegundoNombre" name="SegundoNombre" className="form-co" />
-              <p className="tituloMOD">CORREO</p>
-              <input type = "Correo" placeholder ="Correo" id="Correo" name="Correo" className="form-co" />
+            <p className="tituloMOD">CLIENTE</p>
+              <input type = "CLIENTE" placeholder ="CLIENTE" id="CLIENTE" name="CLIENTE" className="form-co" />
+              <p className="tituloMOD">TIPO DE SERVICIO</p>
+              <input type = "TIPO DE SERVICIO" placeholder ="TIPO DE SERVICIO" id="TIPO DE SERVICIO" name="TIPO DE SERVICIO" className="form-co" />
+              <p className="tituloMOD">NOMBRE DE SERVICIO</p>
+              <input type = "NOMBRE DE SERVICIO" placeholder ="NOMBRE DE SERVICIO" id="NOMBRE DE SERVICIO" name="NOMBRE DE SERVICIO" className="form-co" />
             </div>
             <div> 
-            <p className="tituloMOD">PRIMER NOMBRE</p>
-              <input type = "PrimerNombre" placeholder ="PrimerNombre" id="PrimerNombre" name="PrimerNombre" className="form-co" />
-              <p className="tituloMOD">SEGUNDO NOMBRE</p>
-              <input type = "SegundoNombre" placeholder ="SegundoNombre" id="SegundoNombre" name="SegundoNombre" className="form-co" />
-              <p className="tituloMOD">CORREO</p>
-              <input type = "Correo" placeholder ="Correo" id="Correo" name="Correo" className="form-co" />
+            <p className="tituloMOD">CANTIDAD</p>
+              <input type = "CANTIDAD" placeholder ="CANTIDAD" id="CANTIDAD" name="CANTIDAD" className="form-co" />
+              <p className="tituloMOD">DETALLE</p>
+              <input type = "DETALLE" placeholder ="DETALLE" id="DETALLE" name="DETALLE" className="form-co" />
+              <p className="tituloMOD">PRECIO UNITARIO</p>
+              <input type = "PRECIO UNITARIO" placeholder ="PRECIO UNITARIO" id="PRECIO UNITARIO" name="PRECIO UNITARIO" className="form-co" />
             </div>
             </div>
             <button className='botonCotizacion'>Summit</button>
