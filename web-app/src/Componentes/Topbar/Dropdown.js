@@ -18,10 +18,9 @@ const  BotonDrop =() => {
   const obtenerNombreUsuario = async() => {
     const {correo, posicion_Usuario} = datosUsuario;
     const body = {correo: correo};
-    console.log(correo + " " + posicion_Usuario);
     try {
       const respuesta = await fetch(
-        `http://localhost:5000/${posicion_Usuario}`,{
+        `https://comunicartewebapp-api.herokuapp.com/${posicion_Usuario}`,{
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(body),
@@ -41,8 +40,8 @@ const  BotonDrop =() => {
 
     return (
       <React.Fragment>
-        <Dropdown isOpen={dropdownOpen} toggle={toggle} direction={'down'}>
-          <DropdownToggle caret> <React.Fragment>{nombreUsuario}</React.Fragment> </DropdownToggle>
+        <Dropdown isOpen={dropdownOpen} toggle={toggle} direction={'down'} >
+          <DropdownToggle caret className="botondeperfil"> <React.Fragment>{nombreUsuario}</React.Fragment> </DropdownToggle>
           <DropdownMenu>
             <DropdownItem header>Perfil</DropdownItem>
             <DropdownItem tag={Link} to={"/perfil_usuario"}>Ver Perfil</DropdownItem>
