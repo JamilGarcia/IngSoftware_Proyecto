@@ -1,15 +1,20 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import '../../../Hojas-de-estilo/GestionPerfiles.css';
 
 const GestionPerfiles = () => {
 
+    const navigate = useNavigate();
     return (
     <React.Fragment>
-      <div className= "g_gp_fondo">
-        <div className="g_gp_caja">
-            <h2 className="h2">GESTION PERFILES</h2>
+      <section>
+        <div className="contenedorBotones">
+          <h2 className="title">Gestion de Perfiles de Empleados</h2>
+          <button type="button" className="botonGestionarPerfiles" onClick={() =>navigate('/crear_empleado')}>Crear Empleado</button>
+          <button type="button" className="botonGestionarPerfiles">Modificar Empleado</button>
+          <button type="button" className="botonGestionarPerfiles">Eliminar Empleado</button>
         </div>
-    </div>
+      </section>
     </React.Fragment>  
   );
   }

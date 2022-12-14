@@ -13,7 +13,7 @@
 }
 .caja-centro {
   background-color: white;
-  min-height: 120%;
+  min-height: 80vh;
   min-width: 50%;
   border-radius: 15px;
 }
@@ -47,7 +47,6 @@
 }
 
 .botonCambiarFoto {
-  padding: 0.3em 1.2em;
   margin: 0 0.1em 0.1em 0;
   border: 0.16em solid rgba(255, 255, 255, 0);
   border-radius: 2em;
@@ -68,30 +67,37 @@
 
 .InputsNombre, .InputsApellido-Correo {
   display: flex;
-  gap: 60%;
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-bottom: 5%;
-  padding-top: 3%;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: stretch;
+  padding-bottom: 15px;
 }
 
-.InputVaciosNombres, .InputVaciosApellidosCorreo{
-  display: flex;
-  gap: 25%;
-  padding-left: 10%;
-  padding-right: 10%;
+
+
+.FirstName {
+  padding-left: 15%;
+}
+.SecondName{
+  padding-right: 15%;
 }
 
-.FirstName input, .SecondName input, .Apellidos input, .Correo input {
-  width: 15%;
-  height: 3%;
-  border: 2px solid grey;
-  position: absolute;
-  border-radius: 5px;
+
+.Apellidos {
+  padding-left: 15%;
+}
+.Correo {
+  padding-right: 15%;
 }
 
 .NombreVacioLabel, .ApellidosVacioLabel, .CorreoVacioLabel{
   color:red;
   font-style: italic;
   font-size: 0.875em;
+}
+
+.Avatar-logo{
+  width: 30%;
 }

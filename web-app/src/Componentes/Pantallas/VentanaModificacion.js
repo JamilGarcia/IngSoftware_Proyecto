@@ -60,33 +60,9 @@ const VentanaModificacion = () => {
     }
   };
 
-  const handlePrimerNombre = (e) => {
-    setDataPerfilUsuario({
-      ...dataPerfilUsuario,
-      primer_nombre: e.target.value,
-    });
-  };
-
-  const handleSegundoNombre = (e) => {
-    setDataPerfilUsuario({
-      ...dataPerfilUsuario,
-      segundo_nombre: e.target.value,
-    });
-  };
-
-  const handleApellidos = (e) => {
-    setDataPerfilUsuario({
-      ...dataPerfilUsuario,
-      apellidos: e.target.value,
-    });
-  };
-
-  const handleCorreo = (e) => {
-    setDataPerfilUsuario({
-      ...dataPerfilUsuario,
-      correo_user: e.target.value,
-    });
-  };
+  const onChange = (e) => {/*Metodo para manejar cambios en inputs de texto */
+    setDataPerfilUsuario({...dataPerfilUsuario, [e.target.name]: e.target.value});
+  }
 
   const onImageChange = (event) => {
     if (event.target.files && event.target.files[0]) {
@@ -104,7 +80,7 @@ const VentanaModificacion = () => {
             className="Comunicarte-logo"
             alt="LogoComunicarte"
           />
-          <img src={image} className="Avatar-logo" alt="Avatar" />
+           <img src="/images/avatar.png" className="Avatar-logo" alt="Avatar" />
         </div>
 
         <div>
@@ -126,28 +102,30 @@ const VentanaModificacion = () => {
 
         <div className="InputsNombre">
           <div className="FirstName">
+            <p>Primer Nombre</p>
             <input
               id="inputnombre"
               placeholder={dataPerfilUsuario.primer_nombre}
               type="text"
               value={dataPerfilUsuario.primer_nombre}
               name="primer_nombre"
-              onChange={handlePrimerNombre}
+              onChange={onChange}
             />
           </div>
 
           <div className="SecondName">
+          <p>Segundo Nombre</p>
             <input
               placeholder={dataPerfilUsuario.segundo_nombre}
               type="text"
               value={dataPerfilUsuario.segundo_nombre}
               name="segundo_nombre"
-              onChange={handleSegundoNombre}
+              onChange={onChange}
             />
           </div>
         </div>
 
-        <div className="InputVaciosNombres">
+        {/* <div className="InputVaciosNombres">
           {error && dataPerfilUsuario.primer_nombre.length <= 0 ? (
             <label className="NombreVacioLabel">
               Nombre no puede estar vacio
@@ -155,26 +133,28 @@ const VentanaModificacion = () => {
           ) : (
             ""
           )}
-        </div>
+        </div> */}
 
         <div className="InputsApellido-Correo">
           <div className="Apellidos">
+            <p>Apellidos</p>
             <input
               placeholder={dataPerfilUsuario.apellidos}
               type="text"
               value={dataPerfilUsuario.apellidos}
               name="apellidos"
-              onChange={handleApellidos}
+              onChange={onChange}
             />
           </div>
 
           <div className="Correo">
+            <p>Correo</p>
             <input
               placeholder={dataPerfilUsuario.correo_user}
               type="text"
               value={dataPerfilUsuario.correo_user}
               name="correo"
-              onChange={handleCorreo}
+              onChange={onChange}
             />
           </div>
         </div>

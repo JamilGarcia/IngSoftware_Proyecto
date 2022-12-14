@@ -18,6 +18,7 @@ import RegistroActivosFijos_SubG from './Componentes/Pantallas/VentanasSubGerent
 import EjecutivoScreen from './Componentes/Pantallas/VentanasEjecutivo/EjecutivoScreen';
 import Facturacion from './Componentes/Pantallas/VentanasEjecutivo/Facturacion';
 import Cotizacion from './Componentes/Pantallas/VentanasEjecutivo/Cotizacion';
+import CreateEmpleado from './Componentes/Pantallas/CreateEmpleado';
 
 function App() {
 
@@ -52,7 +53,6 @@ function App() {
                     <Route path = "flujo_efectivo" element={<FlujoEfectivo />} /> 
                     <Route path = "gestion_perfiles" element={<GestionPerfiles/>} /> 
                     <Route path = "registro_activos_fijos" element={<RegistroActivosFijos />} />
-                    <Route path = "/Gerente/descripcion_tabla_flujo_efectivo" element={<DescripcionTablaFlujoEfectivo/>} />  
                 </Route>
                 <Route path = "/Subgerente" element = {<SubgerenteScreen />} >
                     <Route path = "registrar_facturas" element={<RegistrarFacturasSubG/>} /> 
@@ -65,6 +65,7 @@ function App() {
                 </Route>
                 <Route path ="/perfil_usuario" element={<VerPerfil/>}/>
                 <Route path = "/modificar_perfil" element={<VentanaModificacion/>} /> 
+                <Route path = "/crear_empleado" element={<CreateEmpleado/>} /> 
                 </Route>
                 </Routes>
             </section>

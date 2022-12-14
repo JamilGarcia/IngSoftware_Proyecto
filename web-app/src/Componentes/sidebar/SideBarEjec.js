@@ -13,7 +13,7 @@ const SideBarEjec_C = () => {
         {
             SideBarDataEjec_C.map((item, index)=> {
               return (
-                <div key = {index} className="nav-item">
+                <div key = {index} className="Elementos">
                   <NavLink to={item.path} className={({isActive}) => ["nav-link", isActive ? "active" : null].join("")}>
                     {item.icon}
                     <span>{item.title}</span>
