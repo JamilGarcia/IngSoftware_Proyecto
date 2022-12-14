@@ -8,7 +8,7 @@ const RegistrarFacturasSubG = () => {
         <section>
         <div className= "sg_rf_fondo">
         <div className="sg_rf_caja">
-            <h2 className="h2">REGISTRO DE ACTIVOS FIJOS</h2>
+            <h2 className="h2">REGISTRAR FACTURAS</h2>
         </div>
     </div>
         </section>
