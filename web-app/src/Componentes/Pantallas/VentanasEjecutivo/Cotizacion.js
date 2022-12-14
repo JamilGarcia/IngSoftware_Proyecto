@@ -1,9 +1,13 @@
+import React from "react";
+
 const Cotizacion = () => {
 
     return (
-      <>
-      <h1>Cotizacion</h1>
-      </>
+      <React.Fragment>
+        <section>
+          <div>Cotizacion</div>
+        </section>
+      </React.Fragment>
   );
   }
   

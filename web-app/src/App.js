@@ -7,12 +7,17 @@ import {ProtectedRoute} from './Componentes/Context/ProtectedRoute';
 import { useEffect, useState } from 'react';
 import  VentanaModificacion  from './Componentes/Pantallas/VentanaModificacion';
 import VerPerfil from './Componentes/Pantallas/VerPerfilScreen';
-import Home_Subgerente from './Componentes/Pantallas/Home_Subgerente';
-import Home_EjecutivoC from './Componentes/Pantallas/Home_EjecutivoC';
 import FlujoEfectivo from './Componentes/Pantallas/VentanasGerente/FlujoEfectivo';
 import GenerarFactura from './Componentes/Pantallas/VentanasGerente/GenerarFactura';
 import GestionPerfiles from './Componentes/Pantallas/VentanasGerente/GestionPerfiles';
 import RegistroActivosFijos from './Componentes/Pantallas/VentanasGerente/RegistroActivosFijos';
+import SubgerenteScreen from './Componentes/Pantallas/VentanasSubGerente/SubgerenteScreen';
+import GestionarPerfilSubG from './Componentes/Pantallas/VentanasSubGerente/GestionPerfilSubG';
+import RegistrarFacturasSubG from './Componentes/Pantallas/VentanasSubGerente/RegistrarFacturasSubG';
+import RegistroActivosFijos_SubG from './Componentes/Pantallas/VentanasSubGerente/RegistroActivosFijos_SubG';
+import EjecutivoScreen from './Componentes/Pantallas/VentanasEjecutivo/EjecutivoScreen';
+import Facturacion from './Componentes/Pantallas/VentanasEjecutivo/Facturacion';
+import Cotizacion from './Componentes/Pantallas/VentanasEjecutivo/Cotizacion';
 
 function App() {
 
@@ -48,9 +53,15 @@ function App() {
                     <Route path = "gestion_perfiles" element={<GestionPerfiles/>} /> 
                     <Route path = "registro_activos_fijos" element={<RegistroActivosFijos />} /> 
                 </Route>
-                   
-                <Route path = "/Subgerente" element = {<Home_Subgerente />} />
-                <Route path = "/Ejecutivo_cuenta" element = {<Home_EjecutivoC/>} />
+                <Route path = "/Subgerente" element = {<SubgerenteScreen />} >
+                    <Route path = "registrar_facturas" element={<RegistrarFacturasSubG/>} /> 
+                    <Route path = "registro_activos_fijos" element={<RegistroActivosFijos_SubG />} /> 
+                    <Route path = "gestion_perfiles" element={<GestionarPerfilSubG />} /> 
+                </Route>
+                <Route path = "/Ejecutivo_cuenta" element = {<EjecutivoScreen/>} >
+                    <Route path = "facturacion" element={<Facturacion />} /> 
+                    <Route path = "cotizacion" element={<Cotizacion />} /> 
+                </Route>
                 <Route path ="/perfil_usuario" element={<VerPerfil/>}/>
                 <Route path = "/modificar_perfil" element={<VentanaModificacion/>} /> 
                 </Route>

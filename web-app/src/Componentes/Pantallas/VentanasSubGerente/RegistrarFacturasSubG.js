@@ -1,13 +1,14 @@
 import React from "react";
-const Facturacion = () => {
+
+const RegistrarFacturasSubG = () => {
 
     return (
       <React.Fragment>
         <section>
-          <div>Facturacion</div>
+          <div> Registrar Facturas</div>
         </section>
       </React.Fragment>
   );
   }
   
-  export default Facturacion;
+  export default RegistrarFacturasSubG;

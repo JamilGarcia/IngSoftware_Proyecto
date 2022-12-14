@@ -1,54 +1,30 @@
-import React, { useContext, useState } from "react";
-import { NavItem, NavLink, Nav } from "reactstrap";
-import classNames from "classnames";
-import { Link } from "react-router-dom";
-import { BsFillCartCheckFill } from "react-icons/bs"; 
-import { BsFillChatLeftQuoteFill } from "react-icons/bs";
-import { AuthContext } from "../Context/AuthContext";
-import Ventanas from "../Pantallas/Ventanas";
+import React from "react";
+import {  NavLink} from "react-router-dom";
 
-const SideBarEjec = ({ isOpen, toggle }) => {
+import "../../Hojas-de-estilo/SideBar.css";
+import { SideBarDataEjec_C } from "../Data/SideBarDataEC";
 
-  const { datosUsuario } = useContext(AuthContext);
-
-  const [subVentanaActual, setSubVentanaActual] = useState(0);
-
-  const actualizarSubVentana = (subventana) =>{
-    if(subventana === 7){
-      //Facturación
-      setSubVentanaActual(7);
-    } else if(subventana === 8){
-      //Cotización
-      setSubVentanaActual(8);
-    } else {
-      setSubVentanaActual(0);
-      alert("Ocurrio un error inesperado con la actualizar subventana");
-    }
-  }
-  return (
-    <div className="separaciones">
-  <div className={classNames("sidebar", { "is-open": isOpen })}>
-    <div className="side-menu">
-      <Nav vertical className="side-menu">
-        <p className="tipoUsuario">Ejecutivo</p>
-        <NavItem>
-          <NavLink className = "Elementos"  onClick={() => actualizarSubVentana(7)}>
-            <BsFillCartCheckFill/> Facturación
-          </NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink className = "Elementos"  onClick={() => actualizarSubVentana(8)}>
-            <BsFillChatLeftQuoteFill/> Cotización
-          </NavLink>
-        </NavItem>
-      </Nav>
-    </div>
-    </div>
-    <div>
-        <Ventanas seleccionVentana={subVentanaActual}>Generar factura</Ventanas>
-      </div>
-  </div>
-);
+const SideBarEjec_C = () => {
+  return(
+    <React.Fragment>
+      <section>
+        <div className="sidebar">
+        <p className="tipoUsuario">Ejecutivo Cuenta</p>
+        {
+            SideBarDataEjec_C.map((item, index)=> {
+              return (
+                <div key = {index} className="nav-item">
+                  <NavLink to={item.path} className={({isActive}) => ["nav-link", isActive ? "active" : null].join("")}>
+                    {item.icon}
+                    <span>{item.title}</span>
+                  </NavLink>
+                </div>
+              )
+            })}
+        </div>
+      </section>
+    </React.Fragment>
+  );
 }
 
-export default SideBarEjec;
+export default SideBarEjec_C;
