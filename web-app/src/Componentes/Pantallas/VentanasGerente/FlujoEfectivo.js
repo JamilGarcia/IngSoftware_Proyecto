@@ -1,9 +1,13 @@
+
+import React from "react";
 const FlujoEfectivo = () => {
 
   return (
-    <>
-    <h1>Flujo Efectivo</h1>
-    </>
+    <React.Fragment>
+    <section>
+      <div>Flujo Efectivo</div>
+    </section>
+  </React.Fragment>
 );
 }
 

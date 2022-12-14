@@ -40,7 +40,8 @@ const  BotonDrop =() => {
     const toggle = () => setDropdownOpen((prevState) => !prevState);
 
     return (
-      <Dropdown isOpen={dropdownOpen} toggle={toggle} direction={'down'}>
+      <React.Fragment>
+        <Dropdown isOpen={dropdownOpen} toggle={toggle} direction={'down'}>
           <DropdownToggle caret> <React.Fragment>{nombreUsuario}</React.Fragment> </DropdownToggle>
           <DropdownMenu>
             <DropdownItem header>Perfil</DropdownItem>
@@ -50,6 +51,8 @@ const  BotonDrop =() => {
             <DropdownItem  onClick={logoutUsuario}>Cerrar Sesion</DropdownItem>
           </DropdownMenu>
         </Dropdown>
+      </React.Fragment>
+      
     );
 }
 

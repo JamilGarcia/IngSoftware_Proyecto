@@ -7,26 +7,26 @@ export const SideBarDataG = [
 
     {
         title: "Home",
-        path: "/Gerente"
+        path: ""
     },
     {
         title: "Generar Factura",
-        path: "generar_factura",
+        path: "/Gerente/generar_factura",
         icon: <FaFileInvoiceDollar /> 
     },
     {
         title: "Flujo de Efectivo",
-        path: "flujo_efectivo",
+        path: "/Gerente/flujo_efectivo",
         icon:<FaCashRegister />
     },
     {
         title: "Gestión de Perfiles",
-        path: "gestion_perfiles",
+        path: "/Gerente/gestion_perfiles",
         icon:  <FaUserEdit/>
     },
     {
         title: "Registro de Activos Fijos",
-        path: "registro_activos_fijos",
+        path: "/Gerente/registro_activos_fijos",
         icon: <FaArchive/>
     }
 ]

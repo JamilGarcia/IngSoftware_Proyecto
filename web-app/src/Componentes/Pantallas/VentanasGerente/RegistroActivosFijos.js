@@ -1,9 +1,12 @@
+import React from "react";
 const RegistroActivosFijos = () => {
 
     return (
-      <>
-      <h1>Registro Activos Fijos</h1>
-      </>
+      <React.Fragment>
+      <section>
+        <div>Registro de Activos Fijos</div>
+      </section>
+    </React.Fragment>
   );
   }
   

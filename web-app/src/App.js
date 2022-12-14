@@ -1,5 +1,6 @@
 import { Route, Routes, Navigate, useNavigate} from 'react-router-dom';
-import Home_Gerente from './Componentes/Pantallas/GerenteScreen';
+import React from 'react';
+import Home_Gerente from './Componentes/Pantallas/VentanasGerente/GerenteScreen';
 import LoginScreen from './Componentes/Pantallas/LoginScreen';
 import { AuthProvider } from './Componentes/Context/AuthContext';
 import {ProtectedRoute} from './Componentes/Context/ProtectedRoute';
@@ -35,23 +36,31 @@ function App() {
     },[]);
     return (
         <AuthProvider>
+        <React.Fragment>
+            <section>
             <Routes>
-            <Route path="/" element={
-            isLoggedIn ? <Navigate to={`\\ ${posicion_Usuario}`} /> : <LoginScreen />} />
-            <Route element = {<ProtectedRoute />} >
-                <Route path = "/Gerente" element ={<Home_Gerente/>}>
-                    <Route path="generar_factura" element= {<FlujoEfectivo />}/>
-                    <Route path = "flujo_efectivo" element = {<GenerarFactura />}/>
-                    <Route path = "gestion_perfiles" element = {<GestionPerfiles />}/>
-                    <Route path = "registro_activos_fijos" element = {<RegistroActivosFijos />}/>
+                <Route path="/" element={
+                isLoggedIn ? <Navigate to={`\\ ${posicion_Usuario}`} /> : <LoginScreen />} />
+                <Route element = {<ProtectedRoute />} >
+                <Route path = "/Gerente" element ={<Home_Gerente/>} >
+                    <Route path = "generar_factura" element={<GenerarFactura/>} /> 
+                    <Route path = "flujo_efectivo" element={<FlujoEfectivo />} /> 
+                    <Route path = "gestion_perfiles" element={<GestionPerfiles/>} /> 
+                    <Route path = "registro_activos_fijos" element={<RegistroActivosFijos />} /> 
                 </Route>
+                   
                 <Route path = "/Subgerente" element = {<Home_Subgerente />} />
                 <Route path = "/Ejecutivo_cuenta" element = {<Home_EjecutivoC/>} />
                 <Route path ="/perfil_usuario" element={<VerPerfil/>}/>
                 <Route path = "/modificar_perfil" element={<VentanaModificacion/>} /> 
-            </Route>
-            </Routes>
+                </Route>
+                </Routes>
+            </section>
+                
+          
+        </React.Fragment>
         </AuthProvider>
+        
     );
   }
 

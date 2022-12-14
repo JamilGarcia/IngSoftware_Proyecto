@@ -1,9 +1,14 @@
+import React from "react";
+
 const GenerarFactura = () => {
 
     return (
-      <>
-      <h1>Generar Factura</h1>
-      </>
+      <React.Fragment>
+        <section>
+        <div>Generar Factura</div>
+        </section>
+      </React.Fragment>
+      
   );
   }
   

@@ -4,3 +4,13 @@
     height: 85vh;
     width: 100vh;
 }
+
+.Ventana{
+    width: 100%;
+}
+
+.centrado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,28 +1,30 @@
 import React from "react";
-import { NavItem, NavLink, Nav} from "reactstrap";
-import classNames from "classnames";
+import { NavLink} from "react-router-dom";
 import "../../Hojas-de-estilo/SideBar.css";
 //import SubMenu from "./SubMenu";
 import { SideBarDataG } from "../Data/SideBarDataG";
 
-const SideBar = ({ isOpen, toggle }) => {
+const SideBar = () => {
 
   return(
-    <div className="sidebar">
-      <p className="tipoUsuario">Gerente</p>
-      {
-          SideBarDataG.map((item, index)=> {
-            return (
-              <div key = {index} className="Elementos">
-                  <NavLink to={item.path}>
+    <React.Fragment>
+      <section>
+        <div className="sidebar">
+        <p className="tipoUsuario">Gerente</p>
+        {
+            SideBarDataG.map((item, index)=> {
+              return (
+                <div key = {index} className="nav-item">
+                  <NavLink to={item.path} className={({isActive}) => ["nav-link", isActive ? "active" : null].join("")}>
                     {item.icon}
-                     {item.title}
+                    <span>{item.title}</span>
                   </NavLink>
-              </div>
-            )
-          })
-        }
-  </div>
+                </div>
+              )
+            })}
+        </div>
+      </section>
+    </React.Fragment>
   );
   
 };
