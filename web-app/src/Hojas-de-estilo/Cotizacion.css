@@ -1,0 +1,58 @@
+.g_co_contenedor{
+    width: 90%;
+    max-height: 80%;
+    background-color: #f2f2f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: center;
+    margin-left: 5%;    
+    border-radius: 26px;
+}
+
+.g_co_caja{
+    background-color: white;
+    min-height: 100%;
+    max-height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    
+}
+
+.g_co_fondo{
+    padding-top: 3rem;
+    height: 89.5vh;
+    padding-bottom: 3rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-left: 3%;
+}
+
+.botonCotizacion{
+    margin-top: 1rem;
+    background-color: #ec428c;
+    color: white;
+    width: 20rem;
+    height : 2.5rem;
+    font-size: 1rem;
+    border-radius: 15px;
+}
+.divColumnasCO{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: stretch;
+	align-content: stretch;
+    padding: 3rem;
+}
+.form-co{
+    margin: 1.5em;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    padding: .5rem;
+}
