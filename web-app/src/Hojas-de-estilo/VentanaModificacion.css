@@ -71,8 +71,15 @@
   gap: 60%;
   padding-left: 10%;
   padding-right: 10%;
-  padding-bottom: 10%;
-  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-top: 3%;
+}
+
+.InputVaciosNombres, .InputVaciosApellidosCorreo{
+  display: flex;
+  gap: 25%;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .FirstName input, .SecondName input, .Apellidos input, .Correo input {
@@ -81,4 +88,10 @@
   border: 2px solid grey;
   position: absolute;
   border-radius: 5px;
+}
+
+.NombreVacioLabel, .ApellidosVacioLabel, .CorreoVacioLabel{
+  color:red;
+  font-style: italic;
+  font-size: 0.875em;
 }

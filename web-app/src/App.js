@@ -51,7 +51,8 @@ function App() {
                     <Route path = "generar_factura" element={<GenerarFactura/>} /> 
                     <Route path = "flujo_efectivo" element={<FlujoEfectivo />} /> 
                     <Route path = "gestion_perfiles" element={<GestionPerfiles/>} /> 
-                    <Route path = "registro_activos_fijos" element={<RegistroActivosFijos />} /> 
+                    <Route path = "registro_activos_fijos" element={<RegistroActivosFijos />} />
+                    <Route path = "/Gerente/descripcion_tabla_flujo_efectivo" element={<DescripcionTablaFlujoEfectivo/>} />  
                 </Route>
                 <Route path = "/Subgerente" element = {<SubgerenteScreen />} >
                     <Route path = "registrar_facturas" element={<RegistrarFacturasSubG/>} /> 
