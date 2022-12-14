@@ -8,6 +8,7 @@ import  VentanaModificacion  from './Componentes/Pantallas/VentanaModificacion';
 import VerPerfil from './Componentes/Pantallas/VerPerfilScreen';
 import Home_Subgerente from './Componentes/Pantallas/Home_Subgerente';
 import Home_EjecutivoC from './Componentes/Pantallas/Home_EjecutivoC';
+import DescripcionTablaFlujoEfectivo from './Componentes/Pantallas/DescripcionTablaFlujoEfectivo';
 
 function App() {
 
@@ -46,7 +47,9 @@ function App() {
                 <Route path = "/Subgerente" element = {<Home_Subgerente />} />
                 <Route path = "/Ejecutivo_cuenta" element = {<Home_EjecutivoC/>} />
                 <Route path ="/perfil_usuario" element={<VerPerfil/>}/>
-                <Route path = "/modificar_perfil" element={<VentanaModificacion/>} /> 
+                <Route path = "/modificar_perfil" element={<VentanaModificacion/>} />
+                <Route path = "/Gerente/descripcion_tabla_flujo_efectivo" element={<DescripcionTablaFlujoEfectivo/>} />  
+                
             </Route>
             </Routes>
         </AuthProvider>
