@@ -19,7 +19,6 @@ const VentanaModificacion = () => {
   const obtenerDatos = async () => {
     const { correo } = datosUsuario;
     const body = { correo: correo };
-    console.log(body);
     // 'http://localhost:5000/modificar_perfil'
     try {
       const respuesta = await fetch(
@@ -58,6 +57,7 @@ const VentanaModificacion = () => {
     ) {
       setError(true);
     }
+    ActualizarDatos();
   };
 
   const onChange = (e) => {/*Metodo para manejar cambios en inputs de texto */
@@ -71,6 +71,36 @@ const VentanaModificacion = () => {
   };
 
   const navigate = useNavigate();
+  const ActualizarDatos = async () => {
+    const { correo } = datosUsuario;
+    const body = { 
+      primer_nombre: dataPerfilUsuario.primer_nombre,
+      segundo_nombre: dataPerfilUsuario.segundo_nombre,
+      apellidos: dataPerfilUsuario.apellidos,
+      correoNuevo: dataPerfilUsuario.correo_user,
+      correoViejo: correo 
+    };
+    console.log(body);
+    try {
+      const respuesta = await fetch(
+        "https://comunicartewebapp-api.herokuapp.com/modificar_perfil",
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body),
+        }
+      )
+        .then((respuesta) => respuesta.json())
+        .then(() => {
+          alert("Se modifico exitosamente el perfil.")
+          obtenerDatos();
+        }).catch(() => {
+          alert("Ocurrio un error en la modificacion.")
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  }
   return (
     <div className="fondo-pantallaModificacion">
       <div class="caja-centro">
@@ -82,8 +112,7 @@ const VentanaModificacion = () => {
           />
            <img src="/images/avatar.png" className="Avatar-logo" alt="Avatar" />
         </div>
-
-        <div>
+    <div>
           <input
             id="Selectfile"
             type="file"
@@ -99,7 +128,6 @@ const VentanaModificacion = () => {
             Cambiar Foto
           </label>
         </div>
-
         <div className="InputsNombre">
           <div className="FirstName">
             <p>Primer Nombre</p>
@@ -112,7 +140,6 @@ const VentanaModificacion = () => {
               onChange={onChange}
             />
           </div>
-
           <div className="SecondName">
           <p>Segundo Nombre</p>
             <input
@@ -124,17 +151,6 @@ const VentanaModificacion = () => {
             />
           </div>
         </div>
-
-        {/* <div className="InputVaciosNombres">
-          {error && dataPerfilUsuario.primer_nombre.length <= 0 ? (
-            <label className="NombreVacioLabel">
-              Nombre no puede estar vacio
-            </label>
-          ) : (
-            ""
-          )}
-        </div> */}
-
         <div className="InputsApellido-Correo">
           <div className="Apellidos">
             <p>Apellidos</p>
@@ -146,7 +162,6 @@ const VentanaModificacion = () => {
               onChange={onChange}
             />
           </div>
-
           <div className="Correo">
             <p>Correo</p>
             <input
@@ -158,7 +173,6 @@ const VentanaModificacion = () => {
             />
           </div>
         </div>
-
         <div className="InputVaciosApellidosCorreo">
           
           {error && dataPerfilUsuario.apellidos.length <= 0 ? (
@@ -179,7 +193,6 @@ const VentanaModificacion = () => {
           )}
           
         </div>
-
         <div className="botonesModificacion">
           <button className="botonModificacion" onClick={() => navigate(-1)}>
             Volver
@@ -188,6 +201,15 @@ const VentanaModificacion = () => {
             Guardar Cambios
           </button>
         </div>
+        {/* <div className="InputVaciosNombres">
+          {error && dataPerfilUsuario.primer_nombre.length <= 0 ? (
+            <label className="NombreVacioLabel">
+              Nombre no puede estar vacio
+            </label>
+          ) : (
+            ""
+          )}
+        </div> */}
       </div>
     </div>
   );

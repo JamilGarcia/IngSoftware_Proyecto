@@ -27,7 +27,7 @@ const Cotizacion = () => {
               <input type = "PRECIO UNITARIO" placeholder ="PRECIO UNITARIO" id="PRECIO UNITARIO" name="PRECIO UNITARIO" className="form-co" />
             </div>
             </div>
-            <button className='botonCotizacion'>Summit</button>
+            <button className='botonCotizacion'>Ingresar</button>
         </div>
     </div>
         </section>

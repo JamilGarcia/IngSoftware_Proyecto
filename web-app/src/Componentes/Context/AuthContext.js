@@ -19,6 +19,7 @@ export const AuthProvider = ({children}) => {
         /*Metodo para verificar usuario en la base de datos al hacer fetch */
         try {
             const body = {correo: email, password_usuario: password}; //Recordatorio de cambiar este code
+            console.log(body);
             const respuesta = await fetch('https://comunicartewebapp-api.herokuapp.com/', {
                 method: 'POST',
                 headers: {"Content-Type": "application/json"},

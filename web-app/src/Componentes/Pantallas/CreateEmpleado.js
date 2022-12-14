@@ -24,17 +24,29 @@ const CreateEmpleado = () => {
 
     const handleChange = (e) => {
         setNuevoEmpleado({...nuevoEmpleado, [e.target.name]: e.target.value});
+        handleChangeDate();
+        
     };
+    const handleChangeCombo = (e) =>{
+        setNuevoEmpleado({...nuevoEmpleado, [e.target.name]: e.target.value});
+    }
     const handleChangeDate = ()  => {
+        
         if(selectedDate != null && selectedDate2 != null){
-           
+
             const fecha_temp = new Date(selectedDate.toString());
-            let dateFormated = fecha_temp.getFullYear() +"-" +fecha_temp.getMonth() +"-"+fecha_temp.getDay();
-            //console.log("Hola" + dateFormated); 
-            
+            let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(fecha_temp);
+            let mo = new Intl.DateTimeFormat('en', { month: '2-digit' }).format(fecha_temp);
+            let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(fecha_temp);
+            let dateFormated = ye +"-" +mo +"-"+da;
+            console.log("Hola" + dateFormated); 
+
             //console.log("Hola2");
             const fecha_temp2 = new Date(selectedDate2.toString());
-            let dateFormated2 = fecha_temp2.getFullYear() +"-" +fecha_temp2.getMonth() +"-"+fecha_temp2.getDay();
+            let ye2 = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(fecha_temp2);
+            let mo2 = new Intl.DateTimeFormat('en', { month: '2-digit' }).format(fecha_temp2);
+            let da2 = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(fecha_temp2);
+            let dateFormated2 = ye2 +"-" +mo2 +"-"+da2;
             setNuevoEmpleado({...nuevoEmpleado,fecha_de_nacimiento:dateFormated,fecha_de_inicio:dateFormated2});
         }
     };
@@ -43,7 +55,6 @@ const CreateEmpleado = () => {
     const manejarIngresoDatos = async(e) => {
        
         e.preventDefault();
-        handleChangeDate();
         setFormErros(validate(formErros));
       
         if(Object.keys(formErros).length === 0){
@@ -67,6 +78,8 @@ const CreateEmpleado = () => {
          }).then((respuesta) => respuesta.json()).then((data)=>{ 
             if(data.status === "success"){
                 console.log("Siu");
+                alert("Creacion de Empleado Exitosa");
+                navigate(-1);
              }else{
                 alert("Ocurrio un error al crear un nuevo empleado");
                 console.log("nel");
@@ -115,13 +128,9 @@ const CreateEmpleado = () => {
             erros.fecha_de_inicio = "Selecione la fecha";
             
         }
-        if(nuevoEmpleado.puesto_empresa == true){
+        if(nuevoEmpleado.puesto_empresa === "-- --- --"){
             erros.puesto_empresa = "Selecione un puesto";
             
-        }
-        if(!nuevoEmpleado.puesto_empresa ){
-            erros.puesto_empresa = "Selecione un puesto";
-           
         }
         return erros;
     }
@@ -131,7 +140,7 @@ const CreateEmpleado = () => {
             <h1 className = "Titulo"><bl>Creación De Perfil De Usuario</bl></h1>
             <div className="CuadroCentrado">
                 <div className="seccion_1">
-                    <form onSubmit={ manejarIngresoDatos} className="row g-3" >
+                    <form onSubmit={ () =>manejarIngresoDatos} className="row g-3" >
                         <div className="col-lg-6 col-md-6 col-sm-12">
                             <label for="" className="form-label">Primer Nombre</label>
                             <input
@@ -145,11 +154,11 @@ const CreateEmpleado = () => {
                             <p className="mensaje_error">{formErros.primer_nombre}</p>
                         </div>
                         <div className="col-lg-6 col-md-6 col-sm-12">
-                            <label for="" class="form-label">Segundo Nombre</label>
+                            <label for="" className="form-label">Segundo Nombre</label>
                             <input
                                 type="text"
                                 placeholder=""
-                                class="form-control"
+                                className="form-control"
                                 name="segundo_nombre"
                                 id=""
                                 onChange={e => handleChange(e)}
@@ -203,11 +212,11 @@ const CreateEmpleado = () => {
                         </div>
                         <div className='col-lg-6 col-md-6 col-sm-12 '>
                             <label  className="form-label DateLabel">Tipo de Cuenta</label>    
-                            <select name = "puesto_empresa" class='form-select' id = 'tipo_Cuenta' required onChange={e => handleChange(e)}>
+                            <select name ="puesto_empresa" class='form-select' id = 'tipo_Cuenta' onChange={e => handleChangeCombo(e)}>
                                 <option value> -- --- --</option>
-                                <option >Gerente</option>
-                                <option>Subgerente</option>
-                                <option>Ejecutivo_Cuenta</option>
+                                <option value="Gerente">Gerente</option>
+                                <option value = "Subgerente">Subgerente</option>
+                                <option value = "Ejecutivo_Cuenta">Ejecutivo_Cuenta</option>
                             </select>
                             <p className="mensaje_error">{formErros.puesto_empresa}</p>
                         </div>

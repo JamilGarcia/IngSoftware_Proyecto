@@ -41,13 +41,25 @@ const VerPerfil = () => {
         .then((data) => {
           //Modificar data.fecha_de_nacimiento
           // y data.fecha_de_inicio antes de setear
+          const fecha_temp = new Date(data.fecha_de_nacimiento);
+          let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(fecha_temp);
+          let mo = new Intl.DateTimeFormat('en', { month: '2-digit' }).format(fecha_temp);
+          let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(fecha_temp);
+          let dateFormated = ye +"-" +mo +"-"+da;
+          const fecha_temp2 = new Date(data.fecha_de_inicio);
+            let ye2 = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(fecha_temp2);
+            let mo2 = new Intl.DateTimeFormat('en', { month: '2-digit' }).format(fecha_temp2);
+            let da2 = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(fecha_temp2);
+            let dateFormated2 = ye2 +"-" +mo2 +"-"+da2;
+          //fecha de inicio
+          //fecha de nacimiento
           setDataPerfilUsuario({
             primer_nombre: data.primer_nombre,
             segundo_nombre: data.segundo_nombre,
             apellidos: data.apellidos,
             correo_user: data.correo,
-            fecha_de_nacimiento: data.fecha_de_nacimiento,
-            fecha_de_inicio: data.fecha_de_inicio,
+            fecha_de_nacimiento: dateFormated,
+            fecha_de_inicio: dateFormated2,
             puesto_empresa: data.puesto_empresa,
           });
         });
@@ -96,7 +108,7 @@ const VerPerfil = () => {
         </p>
         <div className="botones">
           <button className="boton" onClick={() => navigate(-1)} >Volver</button>
-          <button className="boton">Editar Perfil</button>
+          <button className="boton" onClick={() => navigate('/modificar_perfil')}>Editar Perfil</button>
         </div>
       </div>
     </div>
