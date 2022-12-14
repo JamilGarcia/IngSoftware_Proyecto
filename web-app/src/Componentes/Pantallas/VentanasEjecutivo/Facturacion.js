@@ -1,9 +1,13 @@
+import '../../../Hojas-de-estilo/Facturacion.css';
 const Facturacion = () => {
 
     return (
-      <>
-      <h1>Facturacion</h1>
-      </>
+      <div className= "g_fac_fondo">
+        <div className="g_fac_caja">
+            <h2 className="h2">FACTURACION</h2>
+            
+        </div>
+    </div>
   );
   }
   

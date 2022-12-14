@@ -13,6 +13,7 @@
     border-color: #7d7d7e;
     border-left: none;
     border-top: none;
+
   }
   
   .sidebar.is-open {
@@ -94,4 +95,8 @@
   
   .side-menu::-webkit-scrollbar-thumb:hover {
     background: #000000;
+  }
+
+  .Sidebar_Ventanas{
+    width: 85%;
   }

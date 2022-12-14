@@ -1,9 +1,12 @@
+import '../../../Hojas-de-estilo/GestionPerfil.css';
 const GestionPerfil = () => {
 
     return (
-      <>
-      <h1> GestionPerfil </h1>
-      </>
+      <div className= "sg_gp_fondo">
+        <div className="sg_gp_caja">
+            <h2 className="h2">GESTION PERFIL</h2>
+        </div>
+    </div>
   );
   }
   

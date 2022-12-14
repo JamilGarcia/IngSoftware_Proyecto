@@ -44,9 +44,9 @@ const SideBarEjec = ({ isOpen, toggle }) => {
       </Nav>
     </div>
     </div>
-    <div>
+    <div className="Sidebar_Ventanas">
         <Ventanas seleccionVentana={subVentanaActual}>Generar factura</Ventanas>
-      </div>
+    </div>
   </div>
 );
 }

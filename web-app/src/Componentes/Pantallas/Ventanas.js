@@ -17,51 +17,37 @@ const Ventanas = (props) => {
     if(props.seleccionVentana === 0){
         //Generar Factura
         return (
-            <div>
                 <GenerarFactura/>
-            </div>
         );
     } else if(props.seleccionVentana === 1){
         //Flujo de Efectivo
         return (
-            <div>
                 <FlujoEfectivo/>
-            </div>
         );
     } else if(props.seleccionVentana === 2){
         //Gestion de Perfiles
         return (
-            <div>
                 <GestionPerfiles/>
-            </div>
         );
     } else if(props.seleccionVentana === 3){
         //Registro de Activos Fijos
         return (
-            <div>
                 <RegistroActivosFijos/>
-            </div>
         );
     } else if(props.seleccionVentana === 4){
         //Registrar Facturas
         return (
-            <div>
                 <RegistrarFacturas/>
-            </div>
         );
     } else if(props.seleccionVentana === 5){
         //Registro de Activos Fijos
         return (
-            <div>
                 <RegistrarActivosFijos/>
-            </div>
         );
     } else if(props.seleccionVentana === 6){
         //Gestión de Perfil
         return (
-            <div>
                 <GestionPerfil/>
-            </div>
         );
     } else if(props.seleccionVentana === 7){
         //Facturación

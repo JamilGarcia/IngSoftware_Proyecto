@@ -54,8 +54,8 @@ const SideBarSG = ({ isOpen, toggle }) => {
       </Nav>
     </div>
     </div>
-    <div>
-        <Ventanas seleccionVentana={subVentanaActual}>Ventana</Ventanas>
+    <div className="Sidebar_Ventanas">
+        <Ventanas seleccionVentana={subVentanaActual}>Generar factura</Ventanas>
       </div>
   </div>
 

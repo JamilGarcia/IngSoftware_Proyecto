@@ -9,6 +9,14 @@ import VerPerfil from './Componentes/Pantallas/VerPerfilScreen';
 import Home_Subgerente from './Componentes/Pantallas/Home_Subgerente';
 import Home_EjecutivoC from './Componentes/Pantallas/Home_EjecutivoC';
 
+import classNames from "classnames";
+import { NavItem, NavLink, Nav } from "reactstrap";
+import { FaFileInvoiceDollar } from "react-icons/fa";
+import { FaCashRegister } from "react-icons/fa";
+import { FaUserEdit } from "react-icons/fa";
+import { FaArchive } from "react-icons/fa";
+import GenerarFactura from "./Componentes/Pantallas/VentanasGerente/GenerarFactura";
+
 function App() {
 
     const navigate = useNavigate();
@@ -29,14 +37,16 @@ function App() {
             return true;
         };
     },[]);
+
+
     return (
         <AuthProvider>
             <Routes>
             <Route path="/" element={
             isLoggedIn ? <Navigate to={`\ ${posicion_Usuario}`} /> : <LoginScreen />} />
-            <Route element = {<ProtectedRoute />} >
+            <Route element = {<ProtectedRoute/>} >
                 <Route path = "/Gerente" element ={<Home_Gerente/>}>
-                    <Route path="generar_factura"/>
+                    <Route path="Generar_factura"/>
                     <Route path = "flujo_efectivo" />
                     {/*<Route path = "/generar_factura" element={<Home_Gerente/>}/>
                     <Route path = "/flujo_efectivo"/>

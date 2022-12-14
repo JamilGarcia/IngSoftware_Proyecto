@@ -37,23 +37,24 @@ const SideBar = ({ isOpen, toggle }) => {
   }
   
   return (
+    
     <div className="separaciones">
       <div className={classNames("sidebar", { "is-open": isOpen })}>
         <div className="side-menu">
           <Nav vertical className="side-menu">
             <p className="tipoUsuario">Gerente</p>
             <NavItem>
-              <NavLink className="Elementos"  onClick={() => actualizarSubVentana(0)}>
-                <FaFileInvoiceDollar /> Generar factura
+              <NavLink className="Elementos" onClick={() => actualizarSubVentana(0)}>
+                <FaFileInvoiceDollar /> Generar Factura
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className="Elementos" onClick={() => actualizarSubVentana(1)}>
+              <NavLink to = "/Flujo" className="Elementos" onClick={() => actualizarSubVentana(1)}>
                 <FaCashRegister /> Flujo de Efectivo
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className="Elementos" onClick={() => actualizarSubVentana(2)}>
+              <NavLink strict to = "/Flujo"  className="Elementos" onClick={() => actualizarSubVentana(2)}>
                 <FaUserEdit></FaUserEdit> Gestión de Perfiles
               </NavLink>
             </NavItem>
@@ -65,10 +66,10 @@ const SideBar = ({ isOpen, toggle }) => {
           </Nav>
         </div>
       </div>
-      <div>
+      <div className="Sidebar_Ventanas">
         <Ventanas seleccionVentana={subVentanaActual}>Generar factura</Ventanas>
       </div>
-    </div>
+  </div>
   );
 };
 

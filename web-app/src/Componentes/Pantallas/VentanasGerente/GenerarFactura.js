@@ -1,9 +1,13 @@
+import '../../../Hojas-de-estilo/GenerarFactura.css';
 const GenerarFactura = () => {
 
     return (
-      <>
-      <h1>Generar Factura</h1>
-      </>
+      <div className= "g_gf_fondo">
+        <div className="g_gf_caja">
+            <h2 className="h2">GENERAR FACTURA</h2>
+            
+        </div>
+    </div>
   );
   }
   
